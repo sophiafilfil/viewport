@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1e",
+              "surface-bright": "#f8f9fa",
+              "surface-container-low": "#f0f1f2",
+              "tertiary-fixed-dim": "#006a66",
+              "outline": "#70787d",
+              "surface-container-highest": "#e1e2e3",
+              "on-primary-fixed": "#001e2d",
+              "primary-container": "#00aeef",
+              "secondary-fixed-dim": "#5c5f62",
+              "surface-variant": "#dee3e5",
+              "tertiary-container": "#bcebe6",
+              "on-error-container": "#410002",
+              "error-container": "#ffdad6",
+              "surface-dim": "#d9dbdc",
+              "on-tertiary-fixed": "#00201e",
+              "tertiary": "#006a66",
+              "primary-fixed": "#c6e7ff",
+              "on-primary-container": "#001e2d",
+              "on-surface-variant": "#40484c",
+              "secondary": "#5c5f62",
+              "on-background": "#191c1e",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#82cfff",
+              "on-secondary-fixed": "#191c1e",
+              "surface-container-high": "#e7e8e9",
+              "secondary-fixed": "#e1e2e6",
+              "on-secondary-container": "#191c1e",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#004c6b",
+              "background": "#f8f9fa",
+              "primary": "#00658d",
+              "surface-tint": "#00658d",
+              "tertiary-fixed": "#9ef1eb",
+              "surface-container": "#edeff0",
+              "on-secondary-fixed-variant": "#44474a",
+              "outline-variant": "#c0c7cd",
+              "primary-fixed-dim": "#82cfff",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#00201e",
+              "on-tertiary-fixed-variant": "#00504d",
+              "inverse-surface": "#2e3133",
+              "secondary-container": "#e1e2e6",
+              "surface": "#f8f9fa",
+              "inverse-on-surface": "#f0f1f2",
+              "error": "#ba1a1a",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"none": "0px", "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-grid {
+            background-image: radial-gradient(circle, #c0c7cd 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        #schedule-modal.schedule-modal-open {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #schedule-modal .schedule-cal-day:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+        #schedule-modal .schedule-cal-day.is-selected {
+            background-color: #00658d;
+            color: #fff;
+        }
+    </style>
+<link rel="stylesheet" href="/stitch/viewport-engineering/shared/viewport-scroll.css"/>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md rounded-none border-b border-[#c0c7cd]/30">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#191c1e] uppercase font-headline">
+            VIEWPORT <span class="text-[#00aeef]">Engineering</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/" target="_top">Home</a>
+<a class="text-[#00658d] border-b-2 border-[#00658d] pb-1 font-headline font-bold tracking-tight uppercase" href="/our-services" target="_top">Services</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-projects" target="_top">Projects</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/about-us" target="_top">About</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/careers" target="_top">Careers</a>
+</div>
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-[#00658d] text-[#00658d] bg-transparent font-headline font-bold uppercase text-sm transition-transform hover:bg-[#00658d]/5 active:scale-95" href="/our-services?schedule=1" target="_top">Schedule Session</a>
+<a class="inline-flex items-center justify-center px-6 py-2 bg-[#00aeef] text-white font-headline font-bold uppercase text-sm transition-transform scale-95 active:scale-90" href="/contact-us" target="_top">Get a Quote</a>
+</div>
+</div>
+</nav>
+<main class="pt-24 min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<img alt="Engineering Precision" class="w-full h-full object-cover opacity-15 grayscale" data-alt="Technical engineering blueprints and measuring equipment on site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSOS-3MYB4uePTkB9ulYst3TEZ06Tcc30c440KjNSohuxyzg253pl6773AcUG06h1nXgki4zTlKehwNzqSDbACVhhbH049J8Q_bma33j-eRBRvzH-WIn1RrvE6t9cGm69mk2C7H1EjLjoQCSRytXEjTfXu4_kz8Go00GIBmXhcSE6Teo5nyAgKyNyvxK4TV9YNUY6gtOm9WaqRlat_p1B04cEoWbfOIvPNmBVt4gG3gfEm5ZlCE46lIpLFBZiWjoSNDBGdgP52hWXH"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/70 to-transparent"></div>
+</div>
+<div class="relative z-10 px-12 w-full max-w-7xl">
+<span class="font-label text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Core Capabilities</span>
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-6 uppercase max-w-4xl">
+                Precision <br/><span class="text-primary-container">Built to Last.</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">Delivering high-accuracy surveying, structural analysis, and comprehensive engineering solutions through advanced instrumentation and technical expertise. Tailored engineering solutions for the unique geological and urban landscapes of Texas, with local teams in Houston, Dallas, and San Antonio.</p>
+</div>
+<!-- Corner Accents -->
+<div class="absolute bottom-12 right-12 flex space-x-2">
+<div class="w-16 h-1 bg-primary"></div>
+<div class="w-4 h-1 bg-outline-variant"></div>
+</div>
+</section>
+<!-- Services Grid Section -->
+<section class="px-12 py-24 bg-surface technical-grid">
+<div class="max-w-none flex flex-col lg:flex-row gap-16">
+<!-- Sticky Sidebar Navigation -->
+<aside class="w-full lg:w-72 shrink-0">
+<div class="sticky top-32">
+<h3 class="font-label text-xs font-bold text-outline uppercase tracking-widest mb-8">Service Categories</h3>
+<ul class="space-y-1">
+<li><a class="group flex items-center justify-between p-4 bg-primary-container text-white font-headline font-bold uppercase text-sm" href="#surveying">Land Surveying <span class="material-symbols-outlined text-sm">arrow_forward</span></a></li>
+<li><a class="group flex items-center justify-between p-4 hover:bg-surface-container-high transition-colors text-on-surface-variant font-headline font-bold uppercase text-sm" href="#civil">Civil Engineering <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span></a></li>
+<li><a class="group flex items-center justify-between p-4 hover:bg-surface-container-high transition-colors text-on-surface-variant font-headline font-bold uppercase text-sm" href="#structural">Structural Design <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span></a></li>
+<li><a class="group flex items-center justify-between p-4 hover:bg-surface-container-high transition-colors text-on-surface-variant font-headline font-bold uppercase text-sm" href="#geotechnical">Geotechnical <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span></a></li>
+<li><a class="group flex items-center justify-between p-4 hover:bg-surface-container-high transition-colors text-on-surface-variant font-headline font-bold uppercase text-sm" href="#environmental">Environmental <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span></a></li>
+</ul>
+</div>
+</aside>
+<!-- Content Area -->
+<div class="flex-1 space-y-32">
+<!-- Section: Land Surveying -->
+<div class="space-y-12" id="surveying">
+<div class="flex items-end justify-between border-b border-outline-variant/40 pb-8">
+<div>
+<h2 class="font-headline text-5xl font-bold uppercase text-on-surface mb-4">01. Land Surveying</h2>
+<p class="font-body text-on-surface-variant text-lg max-w-xl">Utilizing state-of-the-art GNSS and robotic total stations to provide millimeter-accurate spatial data for complex infrastructure projects.</p>
+</div>
+<span class="font-label text-primary font-bold text-sm tracking-tighter">[ ACCURACY: 99.99% ]</span>
+</div>
+<!-- Bento Grid for Surveying Sub-services -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1 bg-outline-variant/20">
+<div class="md:col-span-2 bg-surface-container-lowest p-8 relative group overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">architecture</span>
+<h4 class="font-headline text-2xl font-bold text-on-surface mb-2">Topographic Mapping</h4>
+<p class="text-on-surface-variant leading-relaxed">Detailed analysis of natural and man-made features, elevation contours, and site drainage patterns using 3D laser scanning.</p>
+</div>
+<div class="absolute top-0 right-0 p-4">
+<div class="w-8 h-8 border-t-2 border-r-2 border-primary/20"></div>
+</div>
+</div>
+<div class="bg-surface-container p-8 flex flex-col justify-between">
+<div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">Boundary Surveys</h4>
+<p class="text-on-surface-variant text-sm">Precise legal definition of property lines and easements.</p>
+</div>
+<button class="mt-8 text-primary font-label text-xs font-bold uppercase flex items-center gap-2">Read Specs <span class="material-symbols-outlined text-xs">add</span></button>
+</div>
+<div class="bg-surface-container p-8 flex flex-col justify-between">
+<div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">ALTA/NSPS</h4>
+<p class="text-on-surface-variant text-sm">Comprehensive surveys for commercial real estate transactions.</p>
+</div>
+<button class="mt-8 text-primary font-label text-xs font-bold uppercase flex items-center gap-2">Read Specs <span class="material-symbols-outlined text-xs">add</span></button>
+</div>
+<div class="md:col-span-2 bg-surface-container-lowest p-8 flex flex-col md:flex-row gap-8 items-center">
+<img alt="Surveying Action" class="w-full md:w-1/2 h-48 object-cover grayscale brightness-95 hover:grayscale-0 transition-all duration-500" data-alt="Surveyor using total station equipment on a construction site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPyA-YxOA7sXaxofe5O1ofUY0xiObc1esMzB1x314LKRYsbb1mGuU1g1aALqeI-WwvBBpA5DGxSammVsTW4KlXG692cJ26p42bc3o-Qz2RhDgi6H2xCbWDiDXYMFfn0jVJESguiy6dPBGL0RCvacJUivInfA6p42v9cjcmM_WVYvNn-RQ493tX4aYgxvduFeZ8xiZpZW1wt89VLJypeq-_CnZiDdRupip6y2aHHRDPKDzuPq3od_NqMdnhNFqNyboVx2Y5ZehGMf_F"/>
+<div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">Construction Staking</h4>
+<p class="text-on-surface-variant text-sm">Transferring design plans to the physical site with high-precision layout services.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Civil Engineering -->
+<div class="space-y-12" id="civil">
+<div class="flex items-end justify-between border-b border-outline-variant/40 pb-8">
+<div>
+<h2 class="font-headline text-5xl font-bold uppercase text-on-surface mb-4">02. Civil Engineering</h2>
+<p class="font-body text-on-surface-variant text-lg max-w-xl">Sustainable site design and infrastructure development tailored to modern urban requirements.</p>
+</div>
+<span class="font-label text-primary font-bold text-sm tracking-tighter">[ EFFICIENCY: OPTIMIZED ]</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest border-l-4 border-primary p-12 shadow-sm">
+<span class="font-label text-xs text-outline mb-4 block">CORE SERVICE</span>
+<h4 class="font-headline text-3xl font-bold text-on-surface mb-6 uppercase">Site Development</h4>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Complete planning from feasibility studies to final grading and drainage design. We prioritize stormwater management and environmental compliance in every layout.</p>
+<ul class="space-y-4 text-sm font-label text-on-surface uppercase">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Grading &amp; Drainage Plans</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Utility Infrastructure Design</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Stormwater Management</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Permitting &amp; Entitlements</li>
+</ul>
+</div>
+<div class="relative overflow-hidden group">
+<img alt="Aerial view of site clearing and grading" class="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700" data-alt="Drone aerial of cleared and graded development site with earthwork and equipment" src="/images/sofi-lakes/sofi-lakes-aerial-site-clearing.png"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<div class="absolute bottom-0 left-0 p-8 bg-surface-container-highest/95 backdrop-blur-sm">
+<p class="font-headline font-bold text-on-surface text-lg">Infrastructure Resilience</p>
+<p class="font-label text-xs text-primary font-bold">Advanced Modeling Systems</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Structural Design -->
+<div class="space-y-12" id="structural">
+<div class="flex items-end justify-between border-b border-outline-variant/40 pb-8">
+<div>
+<h2 class="font-headline text-5xl font-bold uppercase text-on-surface mb-4">03. Structural Design</h2>
+<p class="font-body text-on-surface-variant text-lg max-w-xl">Analysis and design for new construction, complex retrofits, and high-performance buildings across Texas markets—from Gulf Coast wind and flood loads to urban density.</p>
+</div>
+<span class="font-label text-primary font-bold text-sm tracking-tighter">[ ANALYSIS: PARAMETRIC ]</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1 bg-outline-variant/20">
+<div class="md:col-span-2 bg-surface-container-lowest p-8 relative group overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">foundation</span>
+<h4 class="font-headline text-2xl font-bold text-on-surface mb-2">Systems &amp; Framing</h4>
+<p class="text-on-surface-variant leading-relaxed">Steel, concrete, masonry, and hybrid systems with coordinated gravity and lateral load paths. We align architectural intent with code-minimum and owner-driven performance goals.</p>
+</div>
+<div class="absolute top-0 right-0 p-4">
+<div class="w-8 h-8 border-t-2 border-r-2 border-primary/20"></div>
+</div>
+</div>
+<div class="bg-surface-container p-8 flex flex-col justify-between">
+<div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">Retrofit &amp; Seismic</h4>
+<p class="text-on-surface-variant text-sm">Strengthening, adaptive reuse, and vulnerability assessments for existing structures.</p>
+</div>
+<button class="mt-8 text-primary font-label text-xs font-bold uppercase flex items-center gap-2">Read Specs <span class="material-symbols-outlined text-xs">add</span></button>
+</div>
+<div class="bg-surface-container p-8 flex flex-col justify-between">
+<div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">Peer Review</h4>
+<p class="text-on-surface-variant text-sm">Independent technical review for critical projects and third-party assurance.</p>
+</div>
+<button class="mt-8 text-primary font-label text-xs font-bold uppercase flex items-center gap-2">Read Specs <span class="material-symbols-outlined text-xs">add</span></button>
+</div>
+<div class="md:col-span-3 bg-surface-container-lowest p-8 flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">engineering</span>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">Construction-Phase Support</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">RFI and submittal support, field observations, and coordination with contractors to keep design intent intact through turnover.</p>
+</div>
+<div class="flex-1 w-full md:text-right">
+<ul class="space-y-3 text-sm font-label text-on-surface uppercase text-left md:text-right inline-block">
+<li class="flex items-center gap-3 md:flex-row-reverse"><span class="w-1.5 h-1.5 bg-primary shrink-0"></span> Load &amp; Code Analysis</li>
+<li class="flex items-center gap-3 md:flex-row-reverse"><span class="w-1.5 h-1.5 bg-primary shrink-0"></span> Connection Design</li>
+<li class="flex items-center gap-3 md:flex-row-reverse"><span class="w-1.5 h-1.5 bg-primary shrink-0"></span> Special Inspections Coordination</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Geotechnical -->
+<div class="space-y-12" id="geotechnical">
+<div class="flex items-end justify-between border-b border-outline-variant/40 pb-8">
+<div>
+<h2 class="font-headline text-5xl font-bold uppercase text-on-surface mb-4">04. Geotechnical</h2>
+<p class="font-body text-on-surface-variant text-lg max-w-xl">Subsurface insight for confident foundations, pavements, and earthworks—scoped to Texas geology, groundwater behavior, and agency expectations.</p>
+</div>
+<span class="font-label text-primary font-bold text-sm tracking-tighter">[ SUBSURFACE: CHARACTERIZED ]</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest border-l-4 border-primary p-12 shadow-sm">
+<span class="font-label text-xs text-outline mb-4 block">CORE SERVICE</span>
+<h4 class="font-headline text-3xl font-bold text-on-surface mb-6 uppercase">Geotechnical Characterization</h4>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Exploration planning, laboratory coordination, and engineering interpretation to support design-level recommendations and risk-aware construction sequencing.</p>
+<ul class="space-y-4 text-sm font-label text-on-surface uppercase">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Foundation &amp; Bearing Recommendations</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Pavement &amp; Subgrade Design Input</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Slope &amp; Retaining Wall Geotechnical Support</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Groundwater &amp; Settlement Considerations</li>
+</ul>
+</div>
+<div class="relative overflow-hidden group min-h-[280px] md:min-h-0">
+<img alt="Geotechnical field work" class="w-full h-full min-h-[280px] object-cover grayscale group-hover:scale-105 transition-transform duration-700" data-alt="Soil sampling and field investigation on a project site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQjIxJ6BLjbyLewF3DmMqFfeB8VEivT6y2sBRhXk0DsSUn2I3F6YM66MlLxTfjM6IXb4CXoelxQ_PbPYdVkZoJFWZNz-vCWZ5ePAMa5NPctA0IkjOQYCC2wKBtnQIUwCecp6aSepLb3ft8CvRYr4ly7cuV-23h8I9qEtma5Mct3cCfy6dyp7xhDtN-yzEOG8b27aOZiKn5IsDzDVtEnzqlgH56PPH46CV2mRQkCb6ecMFlB_HAD0vPW2dZMuWYOc-Frli-rW59X2r6"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<div class="absolute bottom-0 left-0 p-8 bg-surface-container-highest/95 backdrop-blur-sm">
+<p class="font-headline font-bold text-on-surface text-lg">Earthwork &amp; Risk</p>
+<p class="font-label text-xs text-primary font-bold">From Borings to Buildable Solutions</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Environmental (cultural &amp; historic resources scope) -->
+<div class="space-y-12" id="environmental">
+<div class="flex items-end justify-between border-b border-outline-variant/40 pb-8">
+<div>
+<h2 class="font-headline text-5xl font-bold uppercase text-on-surface mb-4">05. Environmental</h2>
+<p class="font-body text-on-surface-variant text-lg max-w-xl">Cultural and historic resources consulting that keeps linear, energy, transportation, and development projects moving—aligned with federal and state review expectations.</p>
+</div>
+<span class="font-label text-primary font-bold text-sm tracking-tighter">[ COMPLIANCE: INTEGRATED ]</span>
+</div>
+<div class="bg-surface-container-highest/80 p-10 border border-outline-variant/30">
+<p class="font-body text-on-surface-variant leading-relaxed max-w-4xl">We support projects that trigger Section&nbsp;106 of the National Historic Preservation Act, NEPA documentation, and related agency processes—including contexts common to FHWA, FERC, the U.S. Army Corps of Engineers, and parallel state rules. Our work is designed to mesh with your schedule, design team, and permitting path.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">Archaeological Discovery &amp; Investigations</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Phased field studies, site identification, and records review to establish what is present before design and ground disturbance advance.</p>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">Evaluation &amp; Mitigation</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Effect assessments, treatment alternatives, and practical mitigation strategies that satisfy agency and stakeholder expectations.</p>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">Integrated CRM Plans</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Program-level cultural resources management planning so recurring project types proceed with clear standards and predictable deliverables.</p>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">Tribal Engagement &amp; Consultation</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Structured outreach and consultation support that respects sovereign interests and regulatory timelines.</p>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm md:col-span-2">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">Historic Preservation Planning</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Planning tools and guidance for local sponsors, developers, and public-sector clients.</p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-primary mt-2 shrink-0"></span> Historic tax credit counseling</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-primary mt-2 shrink-0"></span> Stakeholder training &amp; public outreach</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-primary mt-2 shrink-0"></span> Brochures, exhibits, &amp; interpretive signage content</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-primary mt-2 shrink-0"></span> Heritage tourism &amp; revitalization planning</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-primary mt-2 shrink-0"></span> Local ordinance &amp; design criteria development</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-primary mt-2 shrink-0"></span> Historic context statements</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-primary mt-2 shrink-0"></span> Memoranda of agreement &amp; programmatic agreements</li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">Architectural History &amp; Documentation</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Above-ground resource studies, effects analysis, National Register eligibility, viewshed analysis, deed research, and documentation consistent with HABS/HAER/HALS-style standards where required.</p>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-primary mt-2 shrink-0"></span> 360° photo documentation</li>
+<li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-primary mt-2 shrink-0"></span> Creative mitigation &amp; public engagement</li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">Laboratory, Curation &amp; Exhibits</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Artifact analysis, collections care, exhibit planning, photogrammetry, and community-facing interpretation.</p>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">GIS &amp; Remote Sensing</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Spatial modeling and predictive tools that focus field effort where it matters most.</p>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">Bioarchaeology &amp; Cemetery Support</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Cemetery identification, planning, relocation studies, and respectful coordination with families and jurisdictions.</p>
+</div>
+<div class="bg-surface-container-lowest border-l-4 border-primary p-8 shadow-sm">
+<h4 class="font-headline text-xl font-bold text-on-surface mb-3 uppercase">Monitoring &amp; Geoarchaeology</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Construction monitoring and geoarchaeological input when deposits or features warrant on-site technical judgment.</p>
+</div>
+</div>
+</div>
+<!-- Call to Action Section -->
+<div class="bg-surface-container-highest p-16 relative overflow-hidden border border-outline-variant/30">
+<div class="relative z-10 max-w-3xl">
+<h2 class="font-headline text-4xl font-bold text-on-surface uppercase mb-6">Technical Consultation</h2>
+<p class="font-body text-on-surface-variant text-lg mb-8">Ready to discuss the technical requirements of your next project? Our lead engineers are available for specialized consultations.</p>
+<div class="flex flex-wrap gap-4">
+<button type="button" id="schedule-session-open" class="px-8 py-4 bg-primary text-white font-headline font-bold uppercase tracking-widest text-sm shadow-md hover:bg-primary/90 transition-all">Schedule Session</button>
+<button class="px-8 py-4 border border-outline-variant text-on-surface font-headline font-bold uppercase tracking-widest text-sm hover:bg-surface-container-low transition-colors">Download Specs PDF</button>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px] text-primary" style="font-variation-settings: 'wght' 100;">precision_manufacturing</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Schedule session modal -->
+<div id="schedule-modal" class="fixed inset-0 z-[100] hidden p-4 bg-on-surface/55 backdrop-blur-md" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="schedule-modal-title">
+<button type="button" class="absolute inset-0 w-full h-full cursor-default border-0 bg-transparent" aria-label="Close dialog" data-schedule-backdrop=""></button>
+<div class="relative z-10 w-full max-w-lg max-h-[90vh] overflow-y-auto overflow-x-hidden shadow-2xl border-2 border-primary/25 bg-primary-fixed/95 rounded-[20px]">
+<div class="bg-surface-container-lowest m-2 border border-outline-variant/40 p-6 md:p-8 rounded-[14px]">
+<div class="flex items-start justify-between gap-4 mb-6">
+<div>
+<p id="schedule-step-indicator" class="font-label text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-1">Step <span id="schedule-step-num">1</span> / 4</p>
+<h2 id="schedule-modal-title" class="font-headline text-2xl font-bold text-on-surface uppercase tracking-tight">Schedule a session</h2>
+<p class="font-body text-sm text-on-surface-variant mt-1">Request a consultation time. This is not a confirmed calendar hold until our team responds.</p>
+</div>
+<button type="button" id="schedule-modal-close" class="shrink-0 p-2 rounded-full text-on-surface-variant hover:bg-primary/10 hover:text-primary transition-colors" aria-label="Close">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<div class="schedule-step" data-step="1">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold mb-3">Select date <span class="text-primary">(Mon–Fri)</span></p>
+<div class="flex items-center justify-between mb-4">
+<button type="button" id="schedule-cal-prev" class="p-2 rounded-[10px] text-primary hover:bg-primary/10" aria-label="Previous month"><span class="material-symbols-outlined">chevron_left</span></button>
+<span id="schedule-cal-label" class="font-headline font-bold text-on-surface uppercase text-sm"></span>
+<button type="button" id="schedule-cal-next" class="p-2 rounded-[10px] text-primary hover:bg-primary/10" aria-label="Next month"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center font-label text-[10px] uppercase tracking-wider text-on-surface-variant mb-2">
+<span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+</div>
+<div id="schedule-cal-grid" class="grid grid-cols-7 gap-1"></div>
+</div>
+<div class="schedule-step hidden" data-step="2">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold mb-3">Select time <span class="text-primary">(Central Time)</span></p>
+<p class="font-body text-xs text-on-surface-variant mb-4">Business slots 9:00 AM – 5:00 PM CT, 30-minute intervals.</p>
+<select id="schedule-time-select" class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary rounded-[10px] font-body px-4 py-3 text-on-surface"></select>
+</div>
+<div class="schedule-step hidden" data-step="3">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold mb-3">Purpose</p>
+<select id="schedule-purpose" class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary rounded-[10px] font-body px-4 py-3 text-on-surface mb-4">
+<option value="initial_consultation">Initial consultation</option>
+<option value="technical_scope">Technical / scope discussion</option>
+<option value="site_field">Site visit or field coordination</option>
+<option value="proposal_estimate">Proposal or estimate review</option>
+<option value="gis_surveying">GIS / surveying question</option>
+<option value="structural_infrastructure">Structural or infrastructure question</option>
+<option value="other">Other</option>
+</select>
+<div id="schedule-purpose-other-wrap" class="hidden">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold block mb-2">Describe (brief)</label>
+<textarea id="schedule-purpose-detail" class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary rounded-[10px] font-body px-4 py-3 text-on-surface resize-none min-h-[80px]" maxlength="200" placeholder="A few words about your topic…"></textarea>
+</div>
+</div>
+<div class="schedule-step hidden" data-step="4">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold mb-3">Your contact</p>
+<div class="space-y-4">
+<div>
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold block mb-1">Work email <span class="text-error">*</span></label>
+<input id="schedule-email" type="email" autocomplete="email" class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary rounded-[10px] font-body px-4 py-3 text-on-surface" placeholder="you@company.com" maxlength="254"/>
+</div>
+<div>
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold block mb-1">Phone <span class="text-on-surface-variant font-normal normal-case tracking-normal">(optional)</span></label>
+<input id="schedule-phone" type="tel" autocomplete="tel" inputmode="tel" class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary rounded-[10px] font-body px-4 py-3 text-on-surface" placeholder="+1 (713) 555-0100" maxlength="32"/>
+</div>
+<div>
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold block mb-1">Full name <span class="text-error">*</span></label>
+<input id="schedule-name" type="text" autocomplete="name" required="" class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary rounded-[10px] font-body px-4 py-3 text-on-surface" placeholder="Jane Doe" maxlength="200"/>
+</div>
+<div>
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold block mb-1">Company <span class="text-on-surface-variant font-normal normal-case tracking-normal">(optional)</span></label>
+<input id="schedule-company" type="text" autocomplete="organization" class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary rounded-[10px] font-body px-4 py-3 text-on-surface" placeholder="Acme Corp" maxlength="200"/>
+</div>
+</div>
+<p id="schedule-form-error" class="hidden mt-4 text-sm text-error font-body" role="alert"></p>
+</div>
+<div class="schedule-step hidden text-center py-8" data-step="5">
+<span class="material-symbols-outlined text-primary text-5xl mb-4 block">mark_email_read</span>
+<h3 class="font-headline text-xl font-bold text-on-surface uppercase mb-2">Request sent</h3>
+<p class="font-body text-on-surface-variant text-sm">Our team will follow up about your preferred time. Watch your inbox.</p>
+<button type="button" id="schedule-done" class="mt-8 px-10 py-3 bg-primary text-on-primary font-headline font-bold uppercase text-xs tracking-widest hover:bg-primary/90 transition-colors rounded-[10px]">Done</button>
+</div>
+<div id="schedule-nav" class="flex flex-wrap items-center justify-between gap-4 mt-8 pt-6 border-t border-outline-variant/40">
+<button type="button" id="schedule-back" class="px-6 py-3 border border-outline-variant text-on-surface font-headline font-bold uppercase text-xs tracking-widest hover:bg-surface-container-high transition-colors rounded-[10px] hidden">Back</button>
+<div class="flex-1"></div>
+<button type="button" id="schedule-next" class="px-8 py-3 bg-primary text-on-primary font-headline font-bold uppercase text-xs tracking-widest hover:bg-primary/90 transition-colors disabled:opacity-40 disabled:pointer-events-none rounded-[10px]">Next</button>
+<button type="button" id="schedule-submit" class="hidden px-8 py-3 bg-primary text-on-primary font-headline font-bold uppercase text-xs tracking-widest hover:bg-primary/90 transition-colors disabled:opacity-40 disabled:pointer-events-none rounded-[10px]">Send request</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full rounded-none border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-on-surface mb-4 uppercase font-headline">VIEWPORT Engineering</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+                Precision engineering and surveying solutions for the modern industrial landscape. Grounded in accuracy, driven by technology.
+            </p>
+<div class="flex space-x-4">
+<span class="w-8 h-8 bg-surface-container flex items-center justify-center hover:text-primary transition-colors cursor-pointer text-outline">
+<span class="material-symbols-outlined text-sm">share</span>
+</span>
+<span class="w-8 h-8 bg-surface-container flex items-center justify-center hover:text-primary transition-colors cursor-pointer text-outline">
+<span class="material-symbols-outlined text-sm">mail</span>
+</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface uppercase text-xs tracking-[0.2em] mb-6">Navigation</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="/" target="_top">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="/our-services" target="_top">Services Portfolio</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="/our-projects" target="_top">Project Archive</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="#">Technical Resources</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="/about-us" target="_top">About</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="/careers" target="_top">Careers</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="/contact-us" target="_top">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface uppercase text-xs tracking-[0.2em] mb-6">Compliance</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="#">Sustainability Report</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-body" href="#">Accessibility</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface uppercase text-xs tracking-[0.2em] mb-6">Contact</h4>
+<div class="space-y-4 font-body text-sm text-on-surface-variant">
+<p class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+<span>1200 Precision Way, Suite 400<br/>Houston, TX 77002</span>
+</p>
+<p class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">call</span>
+<span>+1 (800) VIEWPORT</span>
+</p>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body text-sm text-on-surface-variant">© 2024 VIEWPORT Engineering. All Rights Reserved.</span>
+<span class="font-label text-[10px] text-outline tracking-widest uppercase">ISO 9001:2015 CERTIFIED</span>
+</div>
+</footer>
+<script>
+(function () {
+  var WEEKDAYS_ONLY = true;
+  var MAX_MONTHS_AHEAD = 3;
+
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function toISODate(y, m, d) { return y + "-" + pad(m) + "-" + pad(d); }
+
+  function todayISO() {
+    var t = new Date();
+    return toISODate(t.getFullYear(), t.getMonth() + 1, t.getDate());
+  }
+
+  function parseISODate(s) {
+    var p = s.split("-");
+    return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+  }
+
+  function maxSelectableISO() {
+    var t = new Date();
+    t.setMonth(t.getMonth() + MAX_MONTHS_AHEAD);
+    return toISODate(t.getFullYear(), t.getMonth() + 1, t.getDate());
+  }
+
+  function buildTimeSlots() {
+    var slots = [];
+    var h;
+    for (h = 9; h < 17; h++) {
+      slots.push(pad(h) + ":00", pad(h) + ":30");
+    }
+    slots.push("17:00");
+    return slots;
+  }
+
+  function format12(isoTime) {
+    var parts = isoTime.split(":");
+    var hh = Number(parts[0]);
+    var mm = parts[1];
+    var h12 = hh % 12;
+    if (h12 === 0) h12 = 12;
+    var am = hh < 12;
+    return h12 + ":" + mm + " " + (am ? "AM" : "PM");
+  }
+
+  var modal = document.getElementById("schedule-modal");
+  var openBtn = document.getElementById("schedule-session-open");
+  var closeBtn = document.getElementById("schedule-modal-close");
+  var backdrop = modal.querySelector("[data-schedule-backdrop]");
+  var stepNumEl = document.getElementById("schedule-step-num");
+  var stepIndicator = document.getElementById("schedule-step-indicator");
+  var steps = modal.querySelectorAll(".schedule-step");
+  var navEl = document.getElementById("schedule-nav");
+  var backBtn = document.getElementById("schedule-back");
+  var nextBtn = document.getElementById("schedule-next");
+  var submitBtn = document.getElementById("schedule-submit");
+  var doneBtn = document.getElementById("schedule-done");
+  var calLabel = document.getElementById("schedule-cal-label");
+  var calGrid = document.getElementById("schedule-cal-grid");
+  var calPrev = document.getElementById("schedule-cal-prev");
+  var calNext = document.getElementById("schedule-cal-next");
+  var timeSelect = document.getElementById("schedule-time-select");
+  var purposeEl = document.getElementById("schedule-purpose");
+  var purposeOtherWrap = document.getElementById("schedule-purpose-other-wrap");
+  var purposeDetail = document.getElementById("schedule-purpose-detail");
+  var emailEl = document.getElementById("schedule-email");
+  var phoneEl = document.getElementById("schedule-phone");
+  var nameEl = document.getElementById("schedule-name");
+  var companyEl = document.getElementById("schedule-company");
+  var formError = document.getElementById("schedule-form-error");
+
+  var viewYear;
+  var viewMonth;
+  var selectedDate = null;
+  var selectedTime = null;
+  var currentStep = 1;
+  var lastFocus = null;
+
+  var TIME_SLOTS = buildTimeSlots();
+
+  function fillTimeSelect() {
+    timeSelect.innerHTML = "";
+    TIME_SLOTS.forEach(function (slot) {
+      var opt = document.createElement("option");
+      opt.value = slot;
+      opt.textContent = format12(slot) + " CT";
+      timeSelect.appendChild(opt);
+    });
+    selectedTime = TIME_SLOTS[0];
+  }
+
+  function openModal() {
+    lastFocus = document.activeElement;
+    modal.classList.remove("hidden");
+    modal.classList.add("schedule-modal-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    var t = new Date();
+    viewYear = t.getFullYear();
+    viewMonth = t.getMonth();
+    selectedDate = null;
+    selectedTime = null;
+    currentStep = 1;
+    purposeEl.value = "initial_consultation";
+    purposeDetail.value = "";
+    emailEl.value = "";
+    phoneEl.value = "";
+    nameEl.value = "";
+    companyEl.value = "";
+    formError.classList.add("hidden");
+    formError.textContent = "";
+    purposeOtherWrap.classList.add("hidden");
+    fillTimeSelect();
+    renderCalendar();
+    showStep(1);
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    modal.classList.remove("schedule-modal-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+  }
+
+  function showStep(n) {
+    currentStep = n;
+    stepNumEl.textContent = String(Math.min(n, 4));
+    if (stepIndicator) stepIndicator.classList.toggle("hidden", n === 5);
+    steps.forEach(function (el) {
+      var s = Number(el.getAttribute("data-step"));
+      el.classList.toggle("hidden", s !== n);
+    });
+    if (n === 5) {
+      navEl.classList.add("hidden");
+    } else {
+      navEl.classList.remove("hidden");
+      backBtn.classList.toggle("hidden", n === 1);
+      nextBtn.classList.toggle("hidden", n === 4);
+      submitBtn.classList.toggle("hidden", n !== 4);
+    }
+    updateNextDisabled();
+  }
+
+  function monthLabel() {
+    return new Date(viewYear, viewMonth, 1).toLocaleString("en-US", { month: "long", year: "numeric" });
+  }
+
+  function renderCalendar() {
+    calLabel.textContent = monthLabel();
+    calGrid.innerHTML = "";
+    var first = new Date(viewYear, viewMonth, 1);
+    var startPad = first.getDay();
+    var dim = new Date(viewYear, viewMonth + 1, 0).getDate();
+    var i;
+    var tISO = todayISO();
+    var maxISO = maxSelectableISO();
+
+    for (i = 0; i < startPad; i++) {
+      var ph = document.createElement("div");
+      calGrid.appendChild(ph);
+    }
+
+    for (i = 1; i <= dim; i++) {
+      var iso = toISODate(viewYear, viewMonth + 1, i);
+      var dow = new Date(viewYear, viewMonth, i).getDay();
+      var weekend = dow === 0 || dow === 6;
+      var before = iso < tISO;
+      var after = iso > maxISO;
+      var disabled = before || after || (WEEKDAYS_ONLY && weekend);
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "schedule-cal-day aspect-square text-sm font-headline font-bold border border-outline-variant/40 rounded-[8px] transition-colors hover:bg-primary/15 " +
+        (weekend && !disabled ? " bg-surface-container-high/50 " : " bg-surface-container-lowest ");
+      btn.textContent = String(i);
+      btn.disabled = disabled;
+      if (selectedDate === iso) btn.classList.add("is-selected");
+      btn.addEventListener("click", function (is) {
+        return function () {
+          selectedDate = is;
+          renderCalendar();
+          updateNextDisabled();
+        };
+      }(iso));
+      calGrid.appendChild(btn);
+    }
+
+    var now = new Date();
+    calPrev.disabled = viewYear === now.getFullYear() && viewMonth === now.getMonth();
+    var maxD = parseISODate(maxISO);
+    calNext.disabled = viewYear > maxD.getFullYear() || (viewYear === maxD.getFullYear() && viewMonth >= maxD.getMonth());
+  }
+
+  function stepValid(step) {
+    if (step === 1) return !!selectedDate;
+    if (step === 2) return !!timeSelect.value;
+    if (step === 3) {
+      if (purposeEl.value !== "other") return true;
+      return purposeDetail.value.trim().length > 0;
+    }
+    if (step === 4) {
+      var em = emailEl.value.trim();
+      var nm = nameEl.value.trim();
+      return nm.length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
+    }
+    return true;
+  }
+
+  function updateNextDisabled() {
+    if (currentStep < 5) {
+      nextBtn.disabled = !stepValid(currentStep);
+    }
+    submitBtn.disabled = !stepValid(4);
+  }
+
+  function focusables() {
+    return modal.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled])');
+  }
+
+  modal.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeModal();
+      return;
+    }
+    if (e.key !== "Tab" || modal.classList.contains("hidden")) return;
+    var list = Array.prototype.slice.call(focusables()).filter(function (n) {
+      return n.offsetParent !== null || n === closeBtn;
+    });
+    if (!list.length) return;
+    var first = list[0];
+    var last = list[list.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+  doneBtn.addEventListener("click", closeModal);
+
+  calPrev.addEventListener("click", function () {
+    if (viewMonth === 0) {
+      viewMonth = 11;
+      viewYear--;
+    } else viewMonth--;
+    renderCalendar();
+  });
+  calNext.addEventListener("click", function () {
+    if (viewMonth === 11) {
+      viewMonth = 0;
+      viewYear++;
+    } else viewMonth++;
+    renderCalendar();
+  });
+
+  purposeEl.addEventListener("change", function () {
+    purposeOtherWrap.classList.toggle("hidden", purposeEl.value !== "other");
+    updateNextDisabled();
+  });
+  purposeDetail.addEventListener("input", updateNextDisabled);
+  timeSelect.addEventListener("change", function () {
+    selectedTime = timeSelect.value;
+    updateNextDisabled();
+  });
+  emailEl.addEventListener("input", updateNextDisabled);
+  nameEl.addEventListener("input", updateNextDisabled);
+
+  backBtn.addEventListener("click", function () {
+    if (currentStep > 1) showStep(currentStep - 1);
+  });
+
+  nextBtn.addEventListener("click", function () {
+    if (currentStep < 4 && stepValid(currentStep)) {
+      var nextS = currentStep + 1;
+      showStep(nextS);
+      if (nextS === 2) timeSelect.focus();
+      if (nextS === 3) purposeEl.focus();
+      if (nextS === 4) emailEl.focus();
+    }
+  });
+
+  submitBtn.addEventListener("click", function () {
+    if (!stepValid(4)) return;
+    formError.classList.add("hidden");
+    submitBtn.disabled = true;
+    var payload = {
+      date: selectedDate,
+      timeSlot: timeSelect.value,
+      purpose: purposeEl.value,
+      purposeDetail: purposeEl.value === "other" ? purposeDetail.value.trim() : "",
+      email: emailEl.value.trim(),
+      phone: phoneEl.value.trim(),
+      name: nameEl.value.trim(),
+      company: companyEl.value.trim()
+    };
+    fetch("/api/schedule-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) {
+        return r.text().then(function (text) {
+          var j = {};
+          try {
+            j = text ? JSON.parse(text) : {};
+          } catch (e) {
+            j = { error: text || "Invalid response" };
+          }
+          return { ok: r.ok, body: j };
+        });
+      })
+      .then(function (res) {
+        if (res.ok) {
+          showStep(5);
+        } else {
+          formError.textContent = (res.body && res.body.error) || "Something went wrong. Please try again.";
+          formError.classList.remove("hidden");
+        }
+      })
+      .catch(function () {
+        formError.textContent = "Network error. Please try again.";
+        formError.classList.remove("hidden");
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        updateNextDisabled();
+      });
+  });
+
+  try {
+    var scheduleParams = new URLSearchParams(window.location.search);
+    if (scheduleParams.get("schedule") === "1") openModal();
+  } catch (e) {}
+
+  fillTimeSelect();
+})();
+</script>
+<script defer src="/stitch/viewport-engineering/shared/viewport-scroll.js"></script>
+</body></html>

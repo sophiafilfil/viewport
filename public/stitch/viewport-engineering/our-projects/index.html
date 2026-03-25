@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects Portfolio | VIEWPORT Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#1b1c1c",
+                        "surface-bright": "#ffffff",
+                        "surface-container-low": "#f7f9fa",
+                        "tertiary-fixed-dim": "#006a66",
+                        "outline": "#71787e",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-primary-fixed": "#001e2d",
+                        "primary-container": "#c6e7ff",
+                        "secondary-fixed-dim": "#5c5f62",
+                        "surface-variant": "#dee3e9",
+                        "tertiary-container": "#9ef1eb",
+                        "on-error-container": "#410002",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadade",
+                        "on-tertiary-fixed": "#00201e",
+                        "tertiary": "#006a66",
+                        "primary-fixed": "#c6e7ff",
+                        "on-primary-container": "#001e2e",
+                        "on-surface-variant": "#41484d",
+                        "secondary": "#5c5f62",
+                        "on-background": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#82cfff",
+                        "on-secondary-fixed": "#191c1e",
+                        "surface-container-high": "#e7e8ea",
+                        "secondary-fixed": "#e1e2e6",
+                        "on-secondary-container": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#004c6b",
+                        "background": "#fbfcfe",
+                        "primary": "#00658d",
+                        "surface-tint": "#00658d",
+                        "tertiary-fixed": "#9ef1eb",
+                        "surface-container": "#f1f1f3",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "outline-variant": "#c1c7ce",
+                        "primary-fixed-dim": "#82cfff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#00201e",
+                        "on-tertiary-fixed-variant": "#00504d",
+                        "inverse-surface": "#303031",
+                        "secondary-container": "#e1e2e6",
+                        "surface": "#fbfcfe",
+                        "inverse-on-surface": "#f2f0ef",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Work Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-viewport-corner {
+            position: relative;
+        }
+        .technical-viewport-corner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid #00658d;
+            border-left: 2px solid #00658d;
+        }
+        .technical-viewport-corner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-bottom: 2px solid #00658d;
+            border-right: 2px solid #00658d;
+        }
+    </style>
+<link rel="stylesheet" href="/stitch/viewport-engineering/shared/viewport-scroll.css"/>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md rounded-none border-b border-[#c0c7cd]/30">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#191c1e] uppercase font-headline">
+            VIEWPORT <span class="text-[#00aeef]">Engineering</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/" target="_top">Home</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-services" target="_top">Services</a>
+<a class="text-[#00658d] border-b-2 border-[#00658d] pb-1 font-headline font-bold tracking-tight uppercase" href="/our-projects" target="_top">Projects</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/about-us" target="_top">About</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/careers" target="_top">Careers</a>
+</div>
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-[#00658d] text-[#00658d] bg-transparent font-headline font-bold uppercase text-sm transition-transform hover:bg-[#00658d]/5 active:scale-95" href="/our-services?schedule=1" target="_top">Schedule Session</a>
+<a class="inline-flex items-center justify-center px-6 py-2 bg-[#00aeef] text-white font-headline font-bold uppercase text-sm transition-transform scale-95 active:scale-90" href="/contact-us" target="_top">Get a Quote</a>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="px-8 md:px-12 mb-20">
+<div class="max-w-4xl">
+<p class="font-label text-primary tracking-[0.3em] text-xs uppercase mb-4">Portfolio / 2024</p>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface uppercase leading-none mb-8">
+                    Engineered <br/><span class="text-[#00aeef]">Excellence.</span>
+</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                    A catalog of structural precision and mechanical innovation. From high-rise skeletons to complex industrial automation systems, we solve for stability and efficiency.
+                </p>
+</div>
+</section>
+<!-- Filters & Tools Bar -->
+<section class="px-8 md:px-12 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-2 bg-[#00aeef] text-white font-label text-[10px] uppercase tracking-widest font-bold">All Projects</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-[10px] uppercase tracking-widest transition-colors">Structural</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-[10px] uppercase tracking-widest transition-colors">Industrial</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-[10px] uppercase tracking-widest transition-colors">Renewables</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-[10px] uppercase tracking-widest transition-colors">Urban</button>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-label text-[10px] uppercase tracking-widest">
+<span class="flex items-center gap-2 text-primary"><span class="material-symbols-outlined text-sm">grid_view</span> Grid</span>
+<span class="opacity-30">/</span>
+<span class="flex items-center gap-2 opacity-50"><span class="material-symbols-outlined text-sm">list</span> List</span>
+</div>
+</section>
+<!-- Project Grid -->
+<section class="px-8 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 bg-outline-variant/30">
+<!-- Project Card 1 -->
+<div class="group bg-surface-container-lowest p-8 flex flex-col h-full hover:bg-surface-container-low transition-all duration-300">
+<div class="relative mb-8 overflow-hidden technical-viewport-corner p-2">
+<img alt="Sofi Lakes entrance gateway with landscaping" class="w-full aspect-video object-cover transition-all duration-500" data-alt="Sofi Lakes development entrance with metallic gates and purple-blossom trees" src="/images/sofi-lakes-gate-entrance.png"/>
+</div>
+<div class="mt-auto">
+<p class="font-label text-[10px] text-primary mb-2 tracking-widest uppercase">Master Planning</p>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase tracking-tight mb-4">Sofi Lakes</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+                        Large-scale Texas residential community—trails, lakes, pickleball, and 622 acres of green space in Waller County near Katy.
+                    </p>
+<a class="inline-flex items-center gap-2 font-label text-[10px] uppercase tracking-widest text-on-surface font-bold group-hover:text-primary transition-colors" href="/sofi-lakes" target="_top">
+                        View project profile <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group bg-surface-container-lowest p-8 flex flex-col h-full hover:bg-surface-container-low transition-all duration-300">
+<div class="relative mb-8 overflow-hidden technical-viewport-corner p-2">
+<img alt="Automated factory assembly line" class="w-full aspect-video object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close up of robotic engineering arm in factory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVkDts7YBspNx0FZUGgJHJhOMGOmGI31ASlJprYgyC8gZFsPeaXHZsJ5U3d_L6kAdnp9fPsG-k8QhDRQ3v68W-lt6tt4svtR5FsRp2dMQJtfMhX0yg1TttmkcSljYbr_ryWUTm-5Jen5xNtNK2LJPY5ldoo-U90cw4Y4IxNlxspWfmMgy36PTdHeFconeW6w5JLRh0Lo_JmLUSMSdY3EhSwPwbmX3PegGpnoXQQ8PRVZsaP4fg67eOXk5j8D7awQ1pxqWLbJCZt5nm"/>
+</div>
+<div class="mt-auto">
+<p class="font-label text-[10px] text-primary mb-2 tracking-widest uppercase">Industrial Systems</p>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase tracking-tight mb-4">RoboFlow Logistics</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+                        Implementation of an AI-driven hydraulic sorting system that increased throughput efficiency by 42% for a global client.
+                    </p>
+<a class="inline-flex items-center gap-2 font-label text-[10px] uppercase tracking-widest text-on-surface font-bold group-hover:text-primary transition-colors" href="#">
+                        View Technical Docs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="group bg-surface-container-lowest p-8 flex flex-col h-full hover:bg-surface-container-low transition-all duration-300">
+<div class="relative mb-8 overflow-hidden technical-viewport-corner p-2">
+<img alt="Wind turbine farm at sunset" class="w-full aspect-video object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Technical view of wind turbine blades against sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUttY_epX42igp-Ak-4gxjcQdPFzjP_XUcmV2iOR0XVii_XyDqx-M--BytxwcXlunO7HPOgedDaOB81GPSRyEajSHhnawJbpRtkcpFQOEJUXvVF7vWNBSdt278xO8xCAd6Lbl5WOwk19jNmxsOrXi6WfkHr4x7c5ubPLtHJB0HO1WT9LXo_LjBkOLtRbAFow2h53c2qMj2UHrvj9IfuVz8oJfbSj4_hrs8gl9E02P19-KhpB36LZKuyo9-8NZnUdRz2pcnk_i_sBz2"/>
+</div>
+<div class="mt-auto">
+<p class="font-label text-[10px] text-primary mb-2 tracking-widest uppercase">Renewable Energy</p>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase tracking-tight mb-4">Aeolus Wind Array</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+                        Engineering of composite blade structures for extreme offshore environments, focused on high-salinity corrosion resistance.
+                    </p>
+<a class="inline-flex items-center gap-2 font-label text-[10px] uppercase tracking-widest text-on-surface font-bold group-hover:text-primary transition-colors" href="#">
+                        View Technical Docs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="group bg-surface-container-lowest p-8 flex flex-col h-full hover:bg-surface-container-low transition-all duration-300">
+<div class="relative mb-8 overflow-hidden technical-viewport-corner p-2">
+<img alt="Complex highway bridge interchange" class="w-full aspect-video object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Aerial view of engineering bridge interchange project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4poGdcJdUMr3ScJI_CdLxaBekmNLKuMkzzRKmXoXKi_AK4xIvIz-d3mHoUya-da7iZU5MZslTfVA8898szO3lK7Rw-Y6ecAIIrunfTZEePiWINH6x-O5K2Edx7PR_gnt7t-xPwN8yeEAxxW6Z6SfB7IGuBr0zoY336sKqDJTzP-v_AvaWZGtE5NuFhS82E0j4axuAJjPJkVeOSG1cUVfuqMRrenkKJ82vLHYEpc2ti6m-jraweTEnGOWm-epnHvCxZQQMsf3GAPWc"/>
+</div>
+<div class="mt-auto">
+<p class="font-label text-[10px] text-primary mb-2 tracking-widest uppercase">Urban Infrastructure</p>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase tracking-tight mb-4">Nexus Interchange</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+                        Redesigning modular bridge spans to allow for pre-fab assembly, reducing on-site construction time by 6 months.
+                    </p>
+<a class="inline-flex items-center gap-2 font-label text-[10px] uppercase tracking-widest text-on-surface font-bold group-hover:text-primary transition-colors" href="#">
+                        View Technical Docs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project Card 5 -->
+<div class="group bg-surface-container-lowest p-8 flex flex-col h-full hover:bg-surface-container-low transition-all duration-300">
+<div class="relative mb-8 overflow-hidden technical-viewport-corner p-2">
+<img alt="Blueprint over industrial crane" class="w-full aspect-video object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close up of steel cranes on construction site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdOsT4Fm3rqhNicGbBSmwsZg2-KultwwCg3kCoBriGSY6IvBSChtWurhDLSNGplCcPy0SseoaRa_76I9YN423CZUyAzitPsATTI3_4vubj7mDMduksB0UJJh5J4230yUPizMMVAh7G5WnYf0GW1LhHcpixhqH27Pz7TrnzqcdeP1KQb_8-90YcSdSWFtFkGrwplukiMpAMI0GJ9QVxL2mIzGCz6OFzV-PjBWFsggmweK8UUOVsn6WfiJuN_nMYlXKM9pftuRp_-alM"/>
+</div>
+<div class="mt-auto">
+<p class="font-label text-[10px] text-primary mb-2 tracking-widest uppercase">Material Science</p>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase tracking-tight mb-4">Carbon-Lite Foundry</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+                        Development of low-carbon high-strength concrete variants for large-scale foundation pours in soft-soil regions.
+                    </p>
+<a class="inline-flex items-center gap-2 font-label text-[10px] uppercase tracking-widest text-on-surface font-bold group-hover:text-primary transition-colors" href="#">
+                        View Technical Docs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project Card 6 -->
+<div class="group bg-surface-container-lowest p-8 flex flex-col h-full hover:bg-surface-container-low transition-all duration-300">
+<div class="relative mb-8 overflow-hidden technical-viewport-corner p-2">
+<img alt="Water filtration plant pipes" class="w-full aspect-video object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Complex network of industrial filtration pipes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9GMkbjQFta3GxYVmyU2HrXWCtqpNM-iv-G822MJum7mgoY9erTUfHsyEQHUOSZkfiHWweG9_1j1iDZt0Q7tkJVbvUmeFV4J7-qJ4JB3dEs_HIoI-rO80MYpUSL2DdB58tIzyTSfYDnjHXxXW9WkczSLGmMHcrg-sHQ2ES5d6BakEgCeZmrylwl2Og75s0EIuXWes7vnTJJ-28m2DX7Oi4ZpE7JVP3atJqLVqxo--uP41lAzrRssDMPr2nBgRkjJYgbpg8oQ3ACAkF"/>
+</div>
+<div class="mt-auto">
+<p class="font-label text-[10px] text-primary mb-2 tracking-widest uppercase">Civil Engineering</p>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase tracking-tight mb-4">Hydra-Core Facility</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed mb-6">
+                        Complete overhaul of urban water distribution networks using smart-sensor technology for real-time leak detection.
+                    </p>
+<a class="inline-flex items-center gap-2 font-label text-[10px] uppercase tracking-widest text-on-surface font-bold group-hover:text-primary transition-colors" href="#">
+                        View Technical Docs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-24 px-8 md:px-12">
+<div class="bg-surface-container-low p-12 md:p-20 border-l-4 border-primary">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="max-w-xl">
+<h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface uppercase tracking-tighter mb-4">Ready to build the future?</h2>
+<p class="font-body text-on-surface-variant">Our engineering teams are standing by to discuss your next high-precision project. Let's solve the impossible together.</p>
+</div>
+<a class="inline-flex whitespace-nowrap items-center justify-center px-10 py-4 bg-primary text-on-primary font-label text-sm uppercase tracking-[0.2em] font-bold hover:brightness-110 transition-all" href="/contact-us" target="_top">
+                        Consultation Request
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white w-full rounded-none border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-on-surface mb-4 uppercase font-headline tracking-tighter">VIEWPORT Engineering</div>
+<p class="font-body text-sm text-on-surface-variant mb-6">Precision design. Uncompromising structural integrity. The viewport into the next era of industrial engineering.</p>
+</div>
+<div>
+<h4 class="font-label text-on-surface text-[10px] uppercase tracking-widest font-bold mb-6">Expertise</h4>
+<ul class="space-y-3 font-body text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Structural Analysis</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Industrial Automation</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Material Science</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-on-surface text-[10px] uppercase tracking-widest font-bold mb-6">Global Offices</h4>
+<ul class="space-y-3 font-body text-sm text-on-surface-variant">
+<li>London, UK</li>
+<li>Munich, DE</li>
+<li>Austin, TX</li>
+<li>Singapore, SG</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-on-surface text-[10px] uppercase tracking-widest font-bold mb-6">Contact</h4>
+<ul class="space-y-3 font-body text-sm text-on-surface-variant">
+<li>projects@viewport.eng</li>
+<li>+44 (0) 20 7946 0958</li>
+<li class="pt-4 flex gap-4">
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors">share</span>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors">mail</span>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors">link</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-body text-xs text-on-surface-variant opacity-70">© 2024 VIEWPORT Engineering. All Rights Reserved.</p>
+<div class="flex gap-8 font-body text-xs text-on-surface-variant opacity-70">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Sustainability Report</a>
+<a class="hover:text-primary transition-colors" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+<script defer src="/stitch/viewport-engineering/shared/viewport-scroll.js"></script>
+</body></html>

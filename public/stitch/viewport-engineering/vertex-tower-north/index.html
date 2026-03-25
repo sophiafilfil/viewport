@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vertex Tower North | VIEWPORT Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#b3b5b8",
+                        "surface-container-low": "#f7f9fa",
+                        "on-surface-variant": "#44474a",
+                        "secondary-fixed": "#e1e2e6",
+                        "on-primary-container": "#001e2d",
+                        "surface-variant": "#dee3e5",
+                        "outline-variant": "#c1c7ce",
+                        "inverse-surface": "#2e3133",
+                        "inverse-primary": "#82cfff",
+                        "tertiary-container": "#bfebe6",
+                        "primary-fixed-dim": "#82cfff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#9ef1eb",
+                        "outline": "#71787e",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#e1e2e6",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "surface-container-highest": "#e1e2e6",
+                        "surface": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#191c1e",
+                        "background": "#fdfdfd",
+                        "tertiary-fixed-dim": "#82d5cf",
+                        "surface-container-high": "#e7e8e9",
+                        "on-background": "#191c1e",
+                        "surface-container": "#f0f1f1",
+                        "primary-container": "#00aeef",
+                        "on-error-container": "#410002",
+                        "on-tertiary-fixed": "#00201e",
+                        "on-secondary-container": "#191c1e",
+                        "tertiary": "#006a66",
+                        "surface-dim": "#d9dada",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#00504d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#5c5f62",
+                        "primary-fixed": "#c6e7ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#004c6b",
+                        "on-surface": "#191c1e",
+                        "inverse-on-surface": "#f0f0f0",
+                        "primary": "#00aeef",
+                        "surface-tint": "#00658d",
+                        "on-tertiary-container": "#00201e",
+                        "on-primary-fixed": "#001e2d"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Space Grotesk"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .corner-accent {
+            position: relative;
+        }
+        .corner-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid #00aeef;
+            border-left: 2px solid #00aeef;
+        }
+        .corner-accent::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-bottom: 2px solid #00aeef;
+            border-right: 2px solid #00aeef;
+        }
+    </style>
+<link rel="stylesheet" href="/stitch/viewport-engineering/shared/viewport-scroll.css"/>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md rounded-none border-b border-[#c0c7cd]/30">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#191c1e] uppercase font-headline">
+            VIEWPORT <span class="text-[#00aeef]">Engineering</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/" target="_top">Home</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-services" target="_top">Services</a>
+<a class="text-[#00658d] border-b-2 border-[#00658d] pb-1 font-headline font-bold tracking-tight uppercase" href="/our-projects" target="_top">Projects</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/about-us" target="_top">About</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/careers" target="_top">Careers</a>
+</div>
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-[#00658d] text-[#00658d] bg-transparent font-headline font-bold uppercase text-sm transition-transform hover:bg-[#00658d]/5 active:scale-95" href="/our-services?schedule=1" target="_top">Schedule Session</a>
+<a class="inline-flex items-center justify-center px-6 py-2 bg-[#00aeef] text-white font-headline font-bold uppercase text-sm transition-transform scale-95 active:scale-90" href="/contact-us" target="_top">Get a Quote</a>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative h-[819px] w-full flex items-end overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<img alt="Vertex Tower North Architecture" class="absolute inset-0 w-full h-full object-cover" data-alt="Modern geometric skyscraper reaching into the clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_CEPAygbL1rbltlOKOg0UPAGHpBqWWsV0OIYYEOPIjsx4GHxNu8sGWqYhx5Uao1GIXnVPS2WCPnxR9iF-YkiQRyl_yN3_9X5Gu8RzVhjAX017v-BysMZDBWMvQwdznBdUHoj3ToOD8fcPcMBtTgQOaFSQqjyEK4K8FPMwrQsVBGDyKRS79ecjC-UcCTAyR6B5IIl6KR5VtNI8NeOYCEcF0chd0I-mcf6apDwGRv8_mFXvj1b7PTQqx7gXoaV6NmO2h0qW_nbGCaJj"/>
+<div class="relative z-20 px-12 pb-16 max-w-6xl">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-primary text-on-primary px-3 py-1 font-label text-[10px] font-bold tracking-widest uppercase">Ongoing Construction</span>
+<span class="text-white font-label text-[10px] font-bold tracking-widest uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Vancouver, CA
+                </span>
+</div>
+<h1 class="text-7xl font-headline font-bold tracking-tighter text-white mb-4 uppercase">Vertex Tower North</h1>
+<p class="text-xl text-white/90 max-w-2xl font-light">
+                A 320-meter residential monolith redefining the urban skyline through advanced parametric structural engineering and sustainable vertical integration.
+            </p>
+</div>
+</section>
+<!-- Technical Specification Grid -->
+<section class="bg-surface-container-lowest px-12 py-20 border-b border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-0 border-l border-outline-variant/30">
+<div class="p-8 border-r border-b border-outline-variant/30 group hover:bg-surface-container transition-colors">
+<p class="font-label text-[10px] text-primary font-bold uppercase tracking-widest mb-2">Height</p>
+<p class="text-4xl font-headline font-bold text-on-surface uppercase">320.5<span class="text-xl text-outline">m</span></p>
+</div>
+<div class="p-8 border-r border-b border-outline-variant/30 group hover:bg-surface-container transition-colors">
+<p class="font-label text-[10px] text-primary font-bold uppercase tracking-widest mb-2">Total Floors</p>
+<p class="text-4xl font-headline font-bold text-on-surface uppercase">84<span class="text-xl text-outline">L</span></p>
+</div>
+<div class="p-8 border-r border-b border-outline-variant/30 group hover:bg-surface-container transition-colors">
+<p class="font-label text-[10px] text-primary font-bold uppercase tracking-widest mb-2">Floor Area</p>
+<p class="text-4xl font-headline font-bold text-on-surface uppercase">112k<span class="text-xl text-outline">sqm</span></p>
+</div>
+<div class="p-8 border-r border-b border-outline-variant/30 group hover:bg-surface-container transition-colors">
+<p class="font-label text-[10px] text-primary font-bold uppercase tracking-widest mb-2">Client</p>
+<p class="text-xl font-headline font-bold text-on-surface uppercase leading-tight mt-3">Altis Development Group</p>
+</div>
+</div>
+</section>
+<!-- Project Detail Content (Asymmetric Layout) -->
+<section class="px-12 py-24 bg-surface">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Project Summary -->
+<div class="lg:col-span-7">
+<h2 class="font-headline text-3xl font-bold uppercase tracking-tight text-on-surface mb-8">Structural Integrity &amp; Vision</h2>
+<div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+<p>
+                        Vertex Tower North represents a paradigm shift in high-rise engineering. Designed to withstand extreme wind loads and seismic activity common in the Pacific Northwest, the tower utilizes a revolutionary **Central Composite Core** integrated with an external **Steel Exoskeleton**.
+                    </p>
+<p>
+                        Our team implemented a data-driven approach, utilizing real-time sensor feedback during the construction phase to optimize load distribution across the podium levels. The result is a structure that is 15% lighter than conventional skyscrapers of similar height while maintaining superior rigidity.
+                    </p>
+</div>
+<!-- Challenge Bento Cards -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest p-8 corner-accent border border-outline-variant/30 shadow-sm">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">vibration</span>
+<h3 class="text-on-surface font-headline font-bold uppercase tracking-tight mb-3">Seismic Dampening</h3>
+<p class="text-sm text-on-surface-variant font-light">Implemented a 600-ton liquid column tuned mass damper on the 82nd floor to counteract harmonic oscillations during high-wind events.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 corner-accent border border-outline-variant/30 shadow-sm">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">architecture</span>
+<h3 class="text-on-surface font-headline font-bold uppercase tracking-tight mb-3">Parametric Facade</h3>
+<p class="text-sm text-on-surface-variant font-light">Custom structural nodes engineered to support the distinctive twisting glass envelope, requiring sub-millimeter precision in steel fabrication.</p>
+</div>
+</div>
+</div>
+<!-- Sidebar Metadata -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container-high p-10 border border-outline-variant/20">
+<h4 class="font-headline font-bold uppercase tracking-widest text-primary text-sm mb-8">Technical Snapshot</h4>
+<div class="space-y-8">
+<div>
+<p class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Structural System</p>
+<p class="text-on-surface font-medium">Reinforced Concrete Core with Structural Steel Outriggers</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Seismic Category</p>
+<p class="text-on-surface font-medium">Site Class D - High Risk</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Environmental Certification</p>
+<p class="text-on-surface font-medium">LEED Platinum Targeted</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Engineering Services</p>
+<ul class="text-on-surface font-medium space-y-2 mt-2">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> Structural Engineering</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> Wind Tunnel Analysis</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> Seismic Protection Design</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> MEP Coordination</li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-outline-variant/30">
+<button class="w-full flex justify-between items-center bg-inverse-surface text-inverse-on-surface px-6 py-4 font-headline font-bold uppercase tracking-tighter hover:bg-primary hover:text-on-primary transition-all">
+                            Download Full Case Study
+                            <span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="bg-surface-container-lowest py-24 border-y border-outline-variant/30">
+<div class="px-12 grid grid-cols-1 md:grid-cols-12 gap-6 h-[700px]">
+<div class="md:col-span-8 overflow-hidden">
+<img alt="Interior Structural Detail" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Exposed industrial concrete and steel interior of a skyscraper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZv5CoWEGMrSFDoV6N2DLAxJQNpsmON0MmMOMMUFvSYKMNyllvX8CGAh5mtWOEf4L25U-_ORokqeNeMR3haGRyYT0oZ0ss4br1NVHoxR3J2JVopcn2g9_mn_EbnsKv8kc8tS6uIxQtkcJ22tIM6cyfmH0rfnP8ESLfLxyjOBi3Ll5gb934-hl0c6TryVE6-cK9zX4hR7HIJ3hGYnlq2IGxjHmQ89SQiQZ156r3xk1ddkued7_pVC22s0azY9D2qr0i0lU3Ug_JZacp"/>
+</div>
+<div class="md:col-span-4 grid grid-rows-2 gap-6">
+<div class="overflow-hidden">
+<img alt="Construction Detail" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close up of steel reinforcement bars and engineering tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa80BYK1S9ABSpMcH36DsiXKS5JrhYc4H7KFHWdog6yuAUgYs47NljRwHqv1LdUuT4hDdKZa8q6JM3ufsbSDOQWDWxo0m3f3yBW_iYQl-4iVJMElcuIQVEBCD_JMo9aUjEvcHZihp2KTa4lbThugByF8qaL5v6UY9fcR7rzMxCBhyqHAWUFGFpEB97AdJl2brtPGI0Fgxo5-b4qcA-7bnOtGWZ1XLKsXDiA7jf8KbkYjYmUWIDCqiohjXVbs9l2KoaqpCwzojPgQYW"/>
+</div>
+<div class="overflow-hidden">
+<img alt="Top View" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Aerial construction view of a crane over a high-rise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhO47Z6N4keZN3WpZIGBuVHW3Dn0bH6OsVbNzDlWhGnxQVZuEmmD-NDAcsmQW0umE_iB8Z7u59duMn28YDNHOYZjJ9LI4HWzmKmR3J4Xc-q0qK5RQ2TEcCrOFkTvo2tKu6_x8ZGU2yRVA6T743fL-52jTheDVxq9XDmuWbfoK6hC72h_KjiXGgVwVoEBOlH2-L0Rka6Eyco-O2WnPkIq45bXU3Z__Gne9hvEPU21R93fvMPVjHBewHXGiqfY6tzg5-b9FBRmFMnVue"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Projects Section -->
+<section class="px-12 py-32 bg-background">
+<div class="flex justify-between items-end mb-16">
+<div>
+<p class="font-label text-[10px] text-primary font-bold uppercase tracking-[0.3em] mb-4">Portfolio</p>
+<h2 class="text-5xl font-headline font-bold tracking-tighter text-on-surface uppercase">Related Projects</h2>
+</div>
+<button class="border border-outline px-8 py-3 font-headline font-bold uppercase tracking-tight text-on-surface hover:border-primary hover:text-primary transition-colors">View All Projects</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="group">
+<div class="relative overflow-hidden aspect-[4/5] mb-6 border border-outline-variant/30">
+<img alt="Nexus Bridge" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Large-scale modern suspension bridge engineering project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_pPzdBi7TbVsSsakPA52prYfiGRuWBl8E9qcYw3kTkVGgvh8vZqVnqrZYYKSNCuNpog1Fsn3x9EnCXzUU8pc0a4M2GvVHzjWu0eFgpTTJ4B63jTv5ahgdDMwc-jg0B4U5vYsxvVD0NOvy2NzZ0ddnIV8FLK7XM6YdDTrogb4akY0b-xCfCIAQDdplhoqJyNtetzJvW_L2EwIvqqYOppfgdF8TBhXEnBTWmEf24zX_qtq9CnH31uRAAoWrCPYLV1CGPVS-TonJsx6a"/>
+</div>
+<h3 class="text-on-surface font-headline font-bold text-xl uppercase tracking-tight group-hover:text-primary transition-colors">Nexus Bridge</h3>
+<p class="text-sm text-outline uppercase tracking-widest mt-2">Infrastructure | 2023</p>
+</div>
+<div class="group">
+<div class="relative overflow-hidden aspect-[4/5] mb-6 border border-outline-variant/30">
+<img alt="Solaris HQ" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Ultra-modern office building with glass and solar panels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnM51B-M4q49tR38elTq2dYuKZM9sJq-rV54Ln4yus5fxI8b-SBC_S9M-086l47mw68Vwfa5smNedu1BKIXE4SdNseJ46yHProntprQBb0K8eiQ77CNfKYl-Q0uqQ9xD5RXlUZCGQSlsTOmWUVjRP_cTxmBDsqWgyQmZQLUdSVkB-h9UGdTf23bSeefzHJPP_5X_bRBEu2YGJyVCruE4s3sKLmF_rUaxSoaS_JcvD03Ycsb7y3zQHYOXhxJ4iIeGXC_DGVd3zN1JHV"/>
+</div>
+<h3 class="text-on-surface font-headline font-bold text-xl uppercase tracking-tight group-hover:text-primary transition-colors">Solaris HQ</h3>
+<p class="text-sm text-outline uppercase tracking-widest mt-2">Commercial | 2024</p>
+</div>
+<div class="group">
+<div class="relative overflow-hidden aspect-[4/5] mb-6 border border-outline-variant/30">
+<img alt="The Zenith Pavillion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Complex parametric roof structure on a modern pavilion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABeUaHK2q61gCEr5yE_qipM2Vmkt5052GBGHBh0g-h9tvxpF4NMFyYJFkHFSgMWmuVS_LdWvdew_8hOhqBm_iZtFfMgT02jIGTp-FAqxfuPM6QklNCFvZ56Us1T10rweObG5Z8raSznw9GFxdblCOBLSrMlzjbeY6H8oG4LdVkguL3inCWOdyqCH8FVTuX2pOHowufbcCgsfDBoZRa4YsQmF42jediTYTrCUHspRrsstkROlrPgbtHsphZ9-yJo_MXKsZLp_ZM-YhP"/>
+</div>
+<h3 class="text-on-surface font-headline font-bold text-xl uppercase tracking-tight group-hover:text-primary transition-colors">The Zenith Pavilion</h3>
+<p class="text-sm text-outline uppercase tracking-widest mt-2">Cultural | 2022</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 w-full border-t border-outline-variant/30">
+<div>
+<div class="text-lg font-headline font-bold text-on-surface tracking-widest uppercase mb-6">VIEWPORT</div>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed max-w-xs">
+            Precision engineering for the world's most ambitious structures. From seismic resilience to sustainable integration.
+        </p>
+</div>
+<div>
+<h4 class="text-on-surface font-headline font-bold uppercase text-xs tracking-[0.2em] mb-6">Quick Links</h4>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary font-body text-sm transition-colors" href="/contact-us" target="_top">Office Locations</a>
+<a class="text-on-surface-variant hover:text-primary font-body text-sm transition-colors" href="/contact-us" target="_top">Contact</a>
+<a class="text-on-surface-variant hover:text-primary font-body text-sm transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary font-body text-sm transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div>
+<h4 class="text-on-surface font-headline font-bold uppercase text-xs tracking-[0.2em] mb-6">Connect</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">link</span>
+</a>
+</div>
+<p class="text-on-surface-variant font-body text-sm mt-8">
+            © 2024 VIEWPORT Engineering. Precision in Every Dimension.
+        </p>
+</div>
+</footer>
+<script defer src="/stitch/viewport-engineering/shared/viewport-scroll.js"></script>
+</body></html>

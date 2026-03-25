@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#82cfff",
+              "outline-variant": "#bdc8d1",
+              "secondary-fixed": "#c6e7ff",
+              "on-primary-fixed": "#001e2d",
+              "on-surface-variant": "#3e4850",
+              "on-secondary-container": "#3d657e",
+              "on-background": "#191c1d",
+              "inverse-surface": "#2e3132",
+              "surface-variant": "#e1e3e4",
+              "on-tertiary-fixed-variant": "#6b3b00",
+              "on-secondary-fixed-variant": "#204b63",
+              "tertiary-fixed-dim": "#ffb876",
+              "on-tertiary-container": "#572f00",
+              "on-surface": "#191c1d",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#d8dadb",
+              "secondary-fixed-dim": "#a3cce8",
+              "primary-fixed": "#c6e7ff",
+              "primary-container": "#00aeef",
+              "inverse-on-surface": "#eff1f2",
+              "secondary-container": "#b9e2ff",
+              "surface": "#f8fafb",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed": "#2d1600",
+              "tertiary": "#8d4f00",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#6e7881",
+              "surface-tint": "#00658d",
+              "surface-container": "#eceeef",
+              "secondary": "#3a637c",
+              "surface-container-low": "#f2f4f5",
+              "tertiary-container": "#ea8c21",
+              "on-error": "#ffffff",
+              "surface-bright": "#f8fafb",
+              "on-primary-container": "#003e58",
+              "inverse-primary": "#82cfff",
+              "surface-container-high": "#e6e8e9",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#ffdcc0",
+              "surface-container-highest": "#e1e3e4",
+              "on-primary-fixed-variant": "#004c6b",
+              "primary": "#00658d",
+              "error": "#ba1a1a",
+              "background": "#f8fafb",
+              "on-secondary-fixed": "#001e2d"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(to right, #bdc8d1 1px, transparent 1px), linear-gradient(to bottom, #bdc8d1 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.05;
+        }
+        @keyframes hero-image-drift {
+            0%, 100% { transform: scale(1.04) translate(0%, 0%); }
+            50% { transform: scale(1.06) translate(-0.35%, 0.2%); }
+        }
+        @keyframes stat-card-float {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(0, -18px, 0); }
+        }
+        .hero-image-drift {
+            animation: hero-image-drift 44s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+            transform-origin: center center;
+        }
+        .stat-card-float {
+            animation: stat-card-float 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+        }
+        @keyframes firm-license-marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .firm-license-marquee {
+            overflow: hidden;
+            width: 100%;
+        }
+        .firm-license-marquee__track {
+            display: flex;
+            width: max-content;
+            animation: firm-license-marquee-scroll 50s linear infinite;
+        }
+        .firm-license-marquee__text {
+            flex-shrink: 0;
+            padding-right: 4rem;
+            font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+            font-size: clamp(1.5rem, 5vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #aeb6bd;
+            white-space: nowrap;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-image-drift,
+            .stat-card-float {
+                animation: none;
+            }
+            .texas-footprint-hover-layer {
+                transition: none !important;
+            }
+            .firm-license-marquee__track {
+                animation: none;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .firm-license-marquee__dup {
+                display: none;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="/stitch/viewport-engineering/shared/viewport-scroll.css"/>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md rounded-none border-b border-[#c0c7cd]/30">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#191c1e] uppercase font-headline">
+            VIEWPORT <span class="text-[#00aeef]">Engineering</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#00658d] border-b-2 border-[#00658d] pb-1 font-headline font-bold tracking-tight uppercase" href="/" target="_top">Home</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-services" target="_top">Services</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-projects" target="_top">Projects</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/about-us" target="_top">About</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/careers" target="_top">Careers</a>
+</div>
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-[#00658d] text-[#00658d] bg-transparent font-headline font-bold uppercase text-sm transition-transform hover:bg-[#00658d]/5 active:scale-95" href="/our-services?schedule=1" target="_top">Schedule Session</a>
+<a class="inline-flex items-center justify-center px-6 py-2 bg-[#00aeef] text-white font-headline font-bold uppercase text-sm transition-transform scale-95 active:scale-90" href="/contact-us" target="_top">Get a Quote</a>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 blueprint-grid"></div>
+<div class="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+<div class="lg:col-span-7 flex flex-col justify-center">
+<span class="inline-block px-4 py-1 bg-primary-container text-on-primary-container text-xs font-bold tracking-widest uppercase mb-6">Established in Texas</span>
+<h1 class="text-6xl md:text-8xl font-black font-headline leading-[0.9] tracking-tighter mb-8">
+                        ENGINEERING THE <br/> <span class="text-primary-container">NEW ERA</span> OF <br/> INFRASTRUCTURE
+                    </h1>
+<p class="text-on-surface-variant text-xl md:text-2xl max-w-xl mb-10 leading-relaxed">
+                        Precision structural solutions for the modern world. Based in Texas, serving Houston, Dallas, and San Antonio.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a href="/our-projects" target="_top" class="inline-flex items-center justify-center px-10 py-5 bg-primary-container text-on-primary-container font-bold uppercase tracking-widest text-sm hover:brightness-110 active:scale-95 transition-all">
+                            Explore Our Projects
+                        </a>
+<a href="/about-us" target="_top" class="inline-flex items-center justify-center px-10 py-5 border border-outline/20 font-bold uppercase tracking-widest text-sm hover:bg-surface-container-lowest transition-all">
+                            Our Story
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative h-[500px] lg:h-auto">
+<div class="relative h-full min-h-[500px] w-full overflow-hidden">
+<img alt="Rebar grid prepared for concrete pour at a civil construction site" class="hero-image-drift w-full h-full min-h-[500px] object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700" data-alt="Long view of steel reinforcement mesh ready for concrete on a large infrastructure site" src="/images/sofi-lakes/sofi-lakes-home-hero-rebar-prep.png"/>
+</div>
+<div class="stat-card-float absolute -bottom-6 -left-6 bg-surface-container-lowest p-8 shadow-2xl hidden md:block">
+<p class="text-4xl font-black text-primary-container leading-none">350+</p>
+<p class="text-xs font-bold uppercase tracking-widest mt-2">Projects Completed</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Regional Expertise -->
+<section class="py-32 bg-surface">
+<div class="container mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div>
+<h2 class="text-4xl md:text-5xl font-black font-headline tracking-tighter uppercase">OUR TEXAS FOOTPRINT</h2>
+<div class="w-24 h-2 bg-primary-container mt-4"></div>
+</div>
+<p class="text-on-surface-variant max-w-md text-lg">
+                        Specialized engineering for the diverse Texas landscape, from coastal Gulf challenges to the expansive plains of North Texas.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+<!-- Landmark bg: Unsplash Houston — photo-1594687463342-30d6e02ed079 -->
+<div class="group relative overflow-hidden bg-surface-container-low p-12 transition-colors duration-300">
+<div class="texas-footprint-hover-layer pointer-events-none absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 group-hover:opacity-100" style="background-image: url('https://images.unsplash.com/photo-1594687463342-30d6e02ed079?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=80');" aria-hidden="true"></div>
+<div class="texas-footprint-hover-layer pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary-container group-hover:text-primary-fixed text-5xl mb-8 block transition-colors duration-300" data-icon="location_on">location_on</span>
+<h3 class="text-2xl font-bold uppercase mb-4 tracking-tight text-on-surface transition-colors duration-300 group-hover:text-white">Houston</h3>
+<p class="text-on-surface-variant leading-relaxed transition-colors duration-300 group-hover:text-white/90">Flood resilience and high-wind structural optimization for the Gulf Coast's unique environmental demands.</p>
+</div>
+</div>
+<!-- Landmark bg: Unsplash Dallas — photo-1561997014-3346a99fc3ff -->
+<div class="group relative overflow-hidden bg-surface-container-low p-12 transition-colors duration-300 border-x border-outline-variant/10">
+<div class="texas-footprint-hover-layer pointer-events-none absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 group-hover:opacity-100" style="background-image: url('https://images.unsplash.com/photo-1561997014-3346a99fc3ff?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=80');" aria-hidden="true"></div>
+<div class="texas-footprint-hover-layer pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary-container group-hover:text-primary-fixed text-5xl mb-8 block transition-colors duration-300" data-icon="apartment">apartment</span>
+<h3 class="text-2xl font-bold uppercase mb-4 tracking-tight text-on-surface transition-colors duration-300 group-hover:text-white">Dallas</h3>
+<p class="text-on-surface-variant leading-relaxed transition-colors duration-300 group-hover:text-white/90">High-density urban infrastructure and corporate campus master-planning for the DFW metroplex.</p>
+</div>
+</div>
+<!-- Landmark bg: Unsplash San Antonio — photo-1570423024093-1896ade6736b -->
+<div class="group relative overflow-hidden bg-surface-container-low p-12 transition-colors duration-300">
+<div class="texas-footprint-hover-layer pointer-events-none absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 group-hover:opacity-100" style="background-image: url('https://images.unsplash.com/photo-1570423024093-1896ade6736b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=80');" aria-hidden="true"></div>
+<div class="texas-footprint-hover-layer pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/55 to-black/75 opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary-container group-hover:text-primary-fixed text-5xl mb-8 block transition-colors duration-300" data-icon="architecture">architecture</span>
+<h3 class="text-2xl font-bold uppercase mb-4 tracking-tight text-on-surface transition-colors duration-300 group-hover:text-white">San Antonio</h3>
+<p class="text-on-surface-variant leading-relaxed transition-colors duration-300 group-hover:text-white/90">Historic preservation and modern seismic-adaptive engineering for Central Texas' growing skylines.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Capabilities (Bento Grid) -->
+<section class="py-32 bg-surface-container-low">
+<div class="container mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-lowest p-12 flex flex-col justify-between group overflow-hidden relative">
+<div class="absolute inset-0 blueprint-grid opacity-10"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary-container text-6xl mb-6" data-icon="foundation">foundation</span>
+<h3 class="text-4xl font-black uppercase tracking-tighter mb-4">Structural<br/>Engineering</h3>
+<p class="text-on-surface-variant text-lg max-w-sm">From skeletal frameworks to intricate reinforcements, we define the strength of modern architecture—paired with responsible materials use and durable coastal and inland performance.</p>
+</div>
+<a class="relative z-10 flex items-center gap-2 font-bold text-primary hover:text-primary-container transition-colors uppercase tracking-widest text-sm" href="/our-services#structural" target="_top">
+                            Learn more <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-lowest p-8 flex flex-col justify-between border-l-4 border-primary-container hover:bg-primary-container group transition-all duration-300">
+<div>
+<h4 class="text-xl font-bold uppercase mb-2 group-hover:text-on-primary-container">Civil Engineering</h4>
+<p class="text-sm text-on-surface-variant group-hover:text-on-primary-container/80">Comprehensive site development and master drainage planning.</p>
+</div>
+<div class="flex items-end justify-between gap-2 mt-4">
+<a class="text-xs font-bold uppercase tracking-widest text-primary group-hover:text-on-primary-container flex items-center gap-1" href="/our-services#civil" target="_top">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<span class="material-symbols-outlined text-primary-container group-hover:text-on-primary-container self-end shrink-0" data-icon="straighten">straighten</span>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-lowest p-8 flex flex-col justify-between hover:bg-primary-container group transition-all duration-300">
+<div>
+<h4 class="text-xl font-bold uppercase mb-2 group-hover:text-on-primary-container">Land Surveying</h4>
+<p class="text-sm text-on-surface-variant group-hover:text-on-primary-container/80">Boundary, topographic, and construction staking with laser precision.</p>
+</div>
+<div class="flex items-end justify-between gap-2 mt-4">
+<a class="text-xs font-bold uppercase tracking-widest text-primary group-hover:text-on-primary-container flex items-center gap-1" href="/our-services#surveying" target="_top">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<span class="material-symbols-outlined text-primary-container group-hover:text-on-primary-container self-end shrink-0" data-icon="rebase_edit">rebase_edit</span>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-lowest p-8 flex flex-col justify-between border-l-4 border-primary-container hover:bg-primary-container group transition-all duration-300">
+<div>
+<h4 class="text-xl font-bold uppercase mb-2 group-hover:text-on-primary-container">Geotechnical</h4>
+<p class="text-sm text-on-surface-variant group-hover:text-on-primary-container/80">Subsurface characterization, foundations, and earthwork recommendations for Texas sites.</p>
+</div>
+<div class="flex items-end justify-between gap-2 mt-4">
+<a class="text-xs font-bold uppercase tracking-widest text-primary group-hover:text-on-primary-container flex items-center gap-1" href="/our-services#geotechnical" target="_top">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<span class="material-symbols-outlined text-primary-container group-hover:text-on-primary-container self-end shrink-0" data-icon="terrain">terrain</span>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-lowest p-8 flex flex-col justify-between hover:bg-primary-container group transition-all duration-300">
+<div>
+<h4 class="text-xl font-bold uppercase mb-2 group-hover:text-on-primary-container">Environmental</h4>
+<p class="text-sm text-on-surface-variant group-hover:text-on-primary-container/80">Cultural and historic resources, Section&nbsp;106, NEPA alignment, and tribal consultation support.</p>
+</div>
+<div class="flex items-end justify-between gap-2 mt-4">
+<a class="text-xs font-bold uppercase tracking-widest text-primary group-hover:text-on-primary-container flex items-center gap-1" href="/our-services#environmental" target="_top">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<span class="material-symbols-outlined text-primary-container group-hover:text-on-primary-container self-end shrink-0" data-icon="history_edu">history_edu</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Project -->
+<section class="py-32 bg-white">
+<div class="container mx-auto px-8">
+<div class="relative bg-surface-container-low overflow-hidden flex flex-col lg:flex-row lg:items-stretch">
+<div class="relative w-full lg:w-1/2 h-[500px] min-h-[500px] shrink-0 overflow-hidden bg-surface-container-low lg:h-auto lg:min-h-[500px] lg:self-stretch">
+<video id="featured-project-video" class="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 scale-105 hover:scale-100" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="/videos/sofi-lakes-featured-poster.png" aria-label="Sofi Lakes — featured master-planned aerial video."></video>
+</div>
+<div class="lg:w-1/2 p-12 md:p-24 flex flex-col justify-center">
+<span class="text-primary font-bold uppercase tracking-widest text-xs mb-4">Case Study: Texas Sofi Lakes</span>
+<h2 class="text-5xl md:text-6xl font-black font-headline tracking-tighter uppercase mb-6">Sofi Lakes — Texas</h2>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                            A 1,800-home master plan in Waller County near Katy, Texas. Pickleball, trails, parks, and pools—plus 622 acres of green space for active families who want room to grow outside.
+                        </p>
+<div class="grid grid-cols-2 gap-8 mb-10">
+<div>
+<p class="text-xs uppercase font-bold text-outline">Master</p>
+<p class="text-xl font-bold">622 Acres.</p>
+</div>
+<div>
+<p class="text-xs uppercase font-bold text-outline">Open Space</p>
+<p class="text-xl font-bold">Trails &amp; Courts</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest border-b-2 border-primary-container pb-2 w-fit hover:gap-6 transition-all" href="/sofi-lakes" target="_top">
+                            View Sofi Lakes <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Texas Board firm registration (scrolling) -->
+<section class="py-10 md:py-12 bg-surface-container-low border-y border-outline-variant/10" aria-label="Texas Board of Professional Engineers and Land Surveys firm registration">
+<div class="firm-license-marquee">
+<div class="firm-license-marquee__track">
+<span class="firm-license-marquee__text">Texas Board of Professional Engineers and Land Surveys Firm# 28189</span>
+<span class="firm-license-marquee__text firm-license-marquee__dup" aria-hidden="true">Texas Board of Professional Engineers and Land Surveys Firm# 28189</span>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 relative overflow-hidden bg-primary-container">
+<div class="absolute inset-0 blueprint-grid opacity-20"></div>
+<div class="container mx-auto px-8 relative z-10 text-center">
+<h2 class="text-5xl md:text-7xl font-black font-headline text-on-primary-container tracking-tighter uppercase mb-8">
+                    READY TO BUILD THE FUTURE?
+                </h2>
+<p class="text-on-primary-container/80 text-xl md:text-2xl max-w-2xl mx-auto mb-12">
+                    Let's collaborate on your next landmark project. Our engineering teams in Houston, Dallas, and San Antonio are ready to deploy.
+                </p>
+<a href="/contact-us" target="_top" class="inline-flex items-center justify-center px-16 py-6 bg-on-background text-surface-container-lowest font-black uppercase tracking-[0.2em] text-sm hover:translate-y-[-4px] active:translate-y-0 transition-all shadow-xl">
+                    Contact Our Team
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-outline-variant/10">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-bold text-slate-900 dark:text-white font-headline tracking-tighter uppercase">VIEWPORT Engineering</span>
+<p class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-500">© 2024 VIEWPORT Engineering. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-500 hover:text-sky-500 transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-500 hover:text-sky-500 transition-colors" href="#">Terms of Service</a>
+<a class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-500 hover:text-sky-500 transition-colors" href="#">LinkedIn</a>
+<a class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-500 hover:text-sky-500 transition-colors" href="#">Texas Licensure</a>
+</div>
+</footer>
+<script>
+(function () {
+  var SLOW_RATE = 0.5;
+  var V = "16";
+  var PATH_USER = "/videos/sofi-lakes-featured-upload.mp4";
+  var PATH_CANON = "/videos/sofi-lakes-featured.mp4";
+  document.addEventListener("DOMContentLoaded", function () {
+    var v = document.getElementById("featured-project-video");
+    if (!v) return;
+    function applySlowMo() {
+      v.defaultPlaybackRate = SLOW_RATE;
+      v.playbackRate = SLOW_RATE;
+    }
+    function armAutoplay() {
+      v.muted = true;
+      v.defaultMuted = true;
+      v.autoplay = true;
+      v.loop = true;
+      v.playsInline = true;
+      v.setAttribute("loop", "");
+      v.setAttribute("playsinline", "");
+      v.setAttribute("webkit-playsinline", "");
+    }
+    function tryPlay() {
+      armAutoplay();
+      applySlowMo();
+      v.play().catch(function () {});
+    }
+    function loadUrl(path) {
+      v.src = path + "?v=" + V;
+      v.load();
+      applySlowMo();
+      armAutoplay();
+      tryPlay();
+    }
+    var usedFallback = false;
+    v.addEventListener("error", function onErr() {
+      if (usedFallback) return;
+      usedFallback = true;
+      v.removeEventListener("error", onErr);
+      loadUrl(PATH_CANON);
+    });
+    v.addEventListener("loadedmetadata", applySlowMo);
+    v.addEventListener("loadeddata", tryPlay);
+    v.addEventListener("canplay", tryPlay);
+    v.addEventListener("canplaythrough", tryPlay);
+    v.addEventListener("playing", applySlowMo);
+    v.addEventListener("ratechange", function () {
+      if (v.playbackRate !== SLOW_RATE) applySlowMo();
+    });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && v.paused) tryPlay();
+    });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) tryPlay();
+          });
+        },
+        { root: null, threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
+      ).observe(v);
+    }
+    loadUrl(PATH_USER);
+    tryPlay();
+  });
+})();
+</script>
+<script defer src="/stitch/viewport-engineering/shared/viewport-scroll.js"></script>
+</body></html>

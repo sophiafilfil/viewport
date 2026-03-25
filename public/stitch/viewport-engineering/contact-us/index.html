@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | VIEWPORT Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#1b1c1c",
+                        "surface-bright": "#fcfcfc",
+                        "surface-container-low": "#f5f5f5",
+                        "tertiary-fixed-dim": "#006a65",
+                        "outline": "#71787e",
+                        "surface-container-highest": "#e1e2e6",
+                        "on-primary-fixed": "#001e2d",
+                        "primary-container": "#00aeef",
+                        "secondary-fixed-dim": "#5c5e61",
+                        "surface-variant": "#e1e2e6",
+                        "tertiary-container": "#bdf1eb",
+                        "on-error-container": "#410002",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed": "#00201e",
+                        "tertiary": "#006a65",
+                        "primary-fixed": "#c6e7ff",
+                        "on-primary-container": "#001e2d",
+                        "on-surface-variant": "#41484d",
+                        "secondary": "#5c5e61",
+                        "on-background": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#82cfff",
+                        "on-secondary-fixed": "#191c1e",
+                        "surface-container-high": "#ebebeb",
+                        "secondary-fixed": "#e1e2e6",
+                        "on-secondary-container": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#004c6b",
+                        "background": "#fcfcfc",
+                        "primary": "#00658d",
+                        "surface-tint": "#00658d",
+                        "tertiary-fixed": "#9ef1eb",
+                        "surface-container": "#f0f0f0",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "outline-variant": "#c1c7ce",
+                        "primary-fixed-dim": "#82cfff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#00201e",
+                        "on-tertiary-fixed-variant": "#00504d",
+                        "inverse-surface": "#303030",
+                        "secondary-container": "#e1e2e6",
+                        "surface": "#fcfcfc",
+                        "inverse-on-surface": "#f2f0ef",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Work Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+            color: #1b1c1c;
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(#e1e2e6 1px, transparent 1px), linear-gradient(90deg, #e1e2e6 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .inquiry-progress-track {
+            height: 6px;
+            background: #e1e2e6;
+            overflow: hidden;
+        }
+        .inquiry-progress-fill {
+            height: 100%;
+            background: #00658d;
+            width: 0%;
+            transition: width 0.15s ease-out;
+        }
+    </style>
+<link rel="stylesheet" href="/stitch/viewport-engineering/shared/viewport-scroll.css"/>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md rounded-none border-b border-[#c0c7cd]/30">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#191c1e] uppercase font-headline">
+            VIEWPORT <span class="text-[#00aeef]">Engineering</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/" target="_top">Home</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-services" target="_top">Services</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-projects" target="_top">Projects</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/about-us" target="_top">About</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/careers" target="_top">Careers</a>
+</div>
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-[#00658d] text-[#00658d] bg-transparent font-headline font-bold uppercase text-sm transition-transform hover:bg-[#00658d]/5 active:scale-95" href="/our-services?schedule=1" target="_top">Schedule Session</a>
+<a class="inline-flex items-center justify-center px-6 py-2 bg-[#00aeef] text-white font-headline font-bold uppercase text-sm transition-transform scale-95 active:scale-90" href="/contact-us" target="_top">Get a Quote</a>
+</div>
+</div>
+</nav>
+<main class="pt-24 min-h-screen">
+<!-- Hero Section -->
+<section class="relative py-20 px-8 blueprint-grid border-b border-surface-container-highest">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col gap-4">
+<span class="font-label text-xs tracking-widest text-primary uppercase font-medium">Contact / Inquiries</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter uppercase max-w-4xl leading-none text-on-surface">
+                        Engineered for <span class="text-primary">Precision</span> Partnerships.
+                    </h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl mt-4">
+                        Connect with our senior engineering team to discuss structural integrity, complex infrastructure, and technical design requirements.
+                    </p>
+</div>
+</div>
+<!-- Decorative L-Brackets -->
+<div class="absolute top-10 right-10 w-8 h-8 border-t-2 border-r-2 border-primary/40"></div>
+<div class="absolute bottom-10 left-10 w-8 h-8 border-b-2 border-l-2 border-primary/40"></div>
+</section>
+<!-- Main Content Area -->
+<section class="grid grid-cols-1 lg:grid-cols-12 w-full">
+<!-- Left Panel: Contact Info & Map -->
+<div class="lg:col-span-5 bg-surface-container-low p-8 md:p-16 border-r border-surface-container-highest flex flex-col gap-12">
+<div class="space-y-12">
+<div>
+<h2 class="font-headline text-2xl font-bold tracking-tight uppercase mb-6 text-on-surface">Global Headquarters</h2>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary mt-1">location_on</span>
+<div class="font-body text-on-surface-variant">
+<p class="text-on-surface font-medium">Texas Headquarters</p>
+<p>400 Engineering Way, Suite 2100</p>
+<p>Houston, TX 77002</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary mt-1">call</span>
+<div class="font-body text-on-surface-variant">
+<p class="text-on-surface font-medium">Technical Inquiries</p>
+<p>+1 (408) 555-0192</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary mt-1">mail</span>
+<div class="font-body text-on-surface-variant">
+<p class="text-on-surface font-medium">General Email</p>
+<p>contact@viewport-eng.com</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Component: Google Maps — Houston, TX (metro, slightly zoomed out) -->
+<div class="relative w-full aspect-video bg-surface-container-high border border-outline-variant/40 overflow-hidden">
+<iframe
+title="Map of Houston, Texas — Viewport Texas headquarters"
+class="absolute inset-0 h-full w-full border-0 grayscale contrast-110 opacity-90 transition-all duration-500 hover:grayscale-0 hover:opacity-100"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+allowfullscreen
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d443080.1847537222!2d-95.87499204999999!3d29.833551949999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def868053c!2sHouston%2C%20TX!5e0!3m2!1sen!2sus!4v1708627200000"></iframe>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight uppercase mb-4 text-on-surface">Operating Hours</h3>
+<div class="grid grid-cols-2 gap-4 font-label text-xs tracking-wider">
+<div class="text-on-surface-variant">MONDAY - FRIDAY</div>
+<div class="text-primary text-right font-bold">9 a.m. – 5 p.m. Central Time</div>
+<div class="text-on-surface-variant">SATURDAY</div>
+<div class="text-on-surface-variant text-right">BY APPOINTMENT</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Form -->
+<div class="lg:col-span-7 bg-surface p-8 md:p-16">
+<div class="max-w-2xl">
+<h2 class="font-headline text-3xl font-bold tracking-tight uppercase mb-2 text-on-surface">Project Inquiry</h2>
+<p class="font-body text-on-surface-variant mb-12">Submit technical specifications for a formal proposal. Our engineering leads respond within 24 business hours.</p>
+<form id="inquiry-form" class="space-y-8" novalidate>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold" for="inquiry-fullName">Full Name</label>
+<input id="inquiry-fullName" name="fullName" required class="w-full bg-surface-container border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all font-body px-4 py-3 text-on-surface placeholder:text-outline/50" placeholder="Johnathan Doe" type="text" autocomplete="name"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold" for="inquiry-email">Corporate Email</label>
+<input id="inquiry-email" name="email" required class="w-full bg-surface-container border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all font-body px-4 py-3 text-on-surface placeholder:text-outline/50" placeholder="j.doe@company.tech" type="email" autocomplete="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold" for="inquiry-projectType">Project Type</label>
+<select id="inquiry-projectType" name="projectType" required class="w-full bg-surface-container border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all font-body px-4 py-3 text-on-surface appearance-none">
+<option value="Structural Engineering">Structural Engineering</option>
+<option value="Infrastructure Planning">Infrastructure Planning</option>
+<option value="Technical Consultancy">Technical Consultancy</option>
+<option value="Precision Prototyping">Precision Prototyping</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold" for="inquiry-budget">Estimated Budget</label>
+<select id="inquiry-budget" name="budget" required class="w-full bg-surface-container border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all font-body px-4 py-3 text-on-surface appearance-none">
+<option value="$50k - $100k">$50k - $100k</option>
+<option value="$100k - $500k">$100k - $500k</option>
+<option value="$500k - $2M">$500k - $2M</option>
+<option value="$2M+">$2M+</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold" for="inquiry-brief">Technical Specifications / Project Brief</label>
+<textarea id="inquiry-brief" name="brief" required class="w-full bg-surface-container border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all font-body px-4 py-3 text-on-surface placeholder:text-outline/50 resize-none" placeholder="Provide a detailed overview of your project's technical scope..." rows="6"></textarea>
+</div>
+<div class="space-y-3">
+<label class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold">Supporting PDFs (optional)</label>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">up to 200 MB upload. Files are sent to <strong class="text-on-surface">VirusTotal</strong> for malware screening before delivery — do not upload confidential data you cannot share with a third-party scanner.</p>
+<input id="inquiry-pdfs" type="file" accept="application/pdf,.pdf" multiple class="sr-only" aria-label="Select PDF files"/>
+<div id="inquiry-dropzone" class="border-2 border-dashed border-outline-variant p-8 text-center hover:border-primary transition-colors cursor-pointer group bg-surface-container/50">
+<span class="material-symbols-outlined text-3xl text-outline mb-2 group-hover:text-primary">upload_file</span>
+<p class="text-sm text-on-surface-variant font-body">Drop PDFs here or <span class="text-primary font-bold underline">browse</span></p>
+<p id="inquiry-file-hint" class="font-label text-[10px] uppercase tracking-wider text-on-surface-variant mt-2">No files selected</p>
+</div>
+<ul id="inquiry-file-list" class="space-y-1 font-body text-sm text-on-surface-variant hidden"></ul>
+</div>
+<div id="inquiry-progress" class="hidden space-y-4 rounded-none border border-outline-variant bg-surface-container-low p-4">
+<div class="space-y-1">
+<div class="flex justify-between font-label text-[10px] uppercase tracking-wider text-on-surface-variant">
+<span>Reading files</span>
+<span id="inquiry-load-pct">0%</span>
+</div>
+<div class="inquiry-progress-track"><div id="inquiry-load-bar" class="inquiry-progress-fill"></div></div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label text-[10px] uppercase tracking-wider text-on-surface-variant">
+<span>Uploading</span>
+<span id="inquiry-upload-pct">0%</span>
+</div>
+<div class="inquiry-progress-track"><div id="inquiry-upload-bar" class="inquiry-progress-fill"></div></div>
+</div>
+<p id="inquiry-scan-note" class="font-body text-xs text-on-surface-variant hidden">After the upload completes, PDFs are analyzed on the server with VirusTotal. This step has no byte progress bar and may take up to a minute.</p>
+</div>
+<p id="inquiry-form-error" class="hidden font-body text-sm text-error" role="alert"></p>
+<p id="inquiry-form-success" class="hidden font-body text-sm text-primary font-medium" role="status"></p>
+<div class="pt-4">
+<button id="inquiry-submit" class="w-full md:w-auto px-12 py-5 bg-primary text-on-primary font-headline font-bold tracking-widest uppercase hover:brightness-110 transition-all active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50 disabled:pointer-events-none" type="submit">
+                                Initialize Inquiry
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-4 py-6 border-t border-surface-container-highest mt-12">
+<span class="material-symbols-outlined text-primary text-sm">shield</span>
+<p class="font-label text-[10px] uppercase tracking-wider text-on-surface-variant">Secure Transmission | AES-256 Encrypted</p>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full rounded-none border-t border-surface-container-highest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full">
+<div class="md:col-span-1">
+<div class="text-xl font-bold text-on-surface mb-4 font-headline uppercase tracking-tighter">VIEWPORT Engineering</div>
+<p class="font-body text-sm text-on-surface-variant max-w-xs leading-relaxed">
+                    Setting the gold standard in structural integrity and technical engineering solutions for the modern world.
+                </p>
+</div>
+<div>
+<h4 class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface mb-6">Infrastructure</h4>
+<div class="flex flex-col gap-3">
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Case Studies</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Methodology</a>
+</div>
+</div>
+<div>
+<h4 class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface mb-6">Company</h4>
+<div class="flex flex-col gap-3">
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability Report</a>
+</div>
+</div>
+<div>
+<h4 class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface mb-6">Legal</h4>
+<div class="flex flex-col gap-3">
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Accessibility</a>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-surface-container-highest flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body text-xs text-on-surface-variant">© 2024 VIEWPORT Engineering. All Rights Reserved.</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label text-[10px] tracking-widest uppercase" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label text-[10px] tracking-widest uppercase" href="#">Twitter / X</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label text-[10px] tracking-widest uppercase" href="#">Instagram</a>
+</div>
+</div>
+</footer>
+<script>
+(function () {
+  var MAX_FILES = 5;
+  var MAX_EACH = 1024 * 1024;
+  var MAX_TOTAL = 3 * 1024 * 1024;
+  var CHUNK = 256 * 1024;
+
+  var form = document.getElementById("inquiry-form");
+  var fileInput = document.getElementById("inquiry-pdfs");
+  var dropzone = document.getElementById("inquiry-dropzone");
+  var fileListEl = document.getElementById("inquiry-file-list");
+  var fileHint = document.getElementById("inquiry-file-hint");
+  var progressWrap = document.getElementById("inquiry-progress");
+  var loadPct = document.getElementById("inquiry-load-pct");
+  var loadBar = document.getElementById("inquiry-load-bar");
+  var uploadPct = document.getElementById("inquiry-upload-pct");
+  var uploadBar = document.getElementById("inquiry-upload-bar");
+  var scanNote = document.getElementById("inquiry-scan-note");
+  var errEl = document.getElementById("inquiry-form-error");
+  var okEl = document.getElementById("inquiry-form-success");
+  var submitBtn = document.getElementById("inquiry-submit");
+
+  function hideMessages() {
+    errEl.classList.add("hidden");
+    okEl.classList.add("hidden");
+    errEl.textContent = "";
+    okEl.textContent = "";
+  }
+
+  function getSelectedFiles() {
+    return Array.prototype.slice.call(fileInput.files || [], 0);
+  }
+
+  function validateFileSelection(files) {
+    if (files.length > MAX_FILES) {
+      return "You can attach at most " + MAX_FILES + " PDFs.";
+    }
+    var total = 0;
+    for (var i = 0; i < files.length; i++) {
+      var f = files[i];
+      var name = (f.name || "").toLowerCase();
+      if (!name.endsWith(".pdf")) {
+        return "Only PDF files are allowed: " + f.name;
+      }
+      if (f.type && f.type !== "application/pdf" && f.type !== "application/octet-stream") {
+        return "Only PDF files are allowed: " + f.name;
+      }
+      if (f.size === 0) {
+        return "Empty PDF: " + f.name;
+      }
+      if (f.size > MAX_EACH) {
+        return "Each PDF must be 1 MB or smaller: " + f.name;
+      }
+      total += f.size;
+    }
+    if (total > MAX_TOTAL) {
+      return "Combined PDF size must be 3 MB or less.";
+    }
+    return null;
+  }
+
+  function renderFileList(files) {
+    fileListEl.innerHTML = "";
+    if (!files.length) {
+      fileListEl.classList.add("hidden");
+      fileHint.textContent = "No files selected";
+      return;
+    }
+    fileHint.textContent = files.length + " file(s) selected";
+    fileListEl.classList.remove("hidden");
+    for (var i = 0; i < files.length; i++) {
+      var li = document.createElement("li");
+      li.textContent = files[i].name + " (" + Math.round(files[i].size / 1024) + " KB)";
+      fileListEl.appendChild(li);
+    }
+  }
+
+  function syncFromInput() {
+    renderFileList(getSelectedFiles());
+  }
+
+  dropzone.addEventListener("click", function () {
+    fileInput.click();
+  });
+  fileInput.addEventListener("change", syncFromInput);
+
+  ["dragenter", "dragover"].forEach(function (ev) {
+    dropzone.addEventListener(ev, function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropzone.classList.add("border-primary", "bg-primary/5");
+    });
+  });
+  ["dragleave", "drop"].forEach(function (ev) {
+    dropzone.addEventListener(ev, function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropzone.classList.remove("border-primary", "bg-primary/5");
+    });
+  });
+  dropzone.addEventListener("drop", function (e) {
+    var dt = e.dataTransfer;
+    if (!dt || !dt.files || !dt.files.length) return;
+    var incoming = Array.prototype.slice.call(dt.files, 0);
+    var pdfs = incoming.filter(function (f) {
+      var n = (f.name || "").toLowerCase();
+      return (!f.type || f.type === "application/pdf") && n.endsWith(".pdf");
+    });
+    var existing = getSelectedFiles();
+    var merged = existing.concat(pdfs);
+    if (merged.length > MAX_FILES) {
+      merged = merged.slice(0, MAX_FILES);
+    }
+    var dataTransfer = new DataTransfer();
+    merged.forEach(function (f) {
+      dataTransfer.items.add(f);
+    });
+    fileInput.files = dataTransfer.files;
+    syncFromInput();
+  });
+
+  function setLoadProgress(p) {
+    p = Math.max(0, Math.min(100, p));
+    loadPct.textContent = p + "%";
+    loadBar.style.width = p + "%";
+  }
+  function setUploadProgress(p) {
+    p = Math.max(0, Math.min(100, p));
+    uploadPct.textContent = p + "%";
+    uploadBar.style.width = p + "%";
+  }
+
+  function readFileChunked(file, baseBytes, totalBytes, onPercent) {
+    return new Promise(function (resolve, reject) {
+      var offset = 0;
+      function next() {
+        if (offset >= file.size) {
+          resolve();
+          return;
+        }
+        var slice = file.slice(offset, offset + CHUNK);
+        var fr = new FileReader();
+        fr.onload = function () {
+          if (offset === 0) {
+            var u8 = new Uint8Array(fr.result);
+            var n = Math.min(5, u8.length);
+            var head = "";
+            for (var k = 0; k < n; k++) {
+              head += String.fromCharCode(u8[k]);
+            }
+            if (file.size >= 5 && head !== "%PDF-") {
+              reject(new Error('Not a valid PDF: "' + file.name + '"'));
+              return;
+            }
+          }
+          offset += slice.size;
+          var globalBytes = baseBytes + offset;
+          onPercent(Math.round((globalBytes / totalBytes) * 100));
+          setTimeout(next, 0);
+        };
+        fr.onerror = function () {
+          reject(new Error('Could not read "' + file.name + '"'));
+        };
+        fr.readAsArrayBuffer(slice);
+      }
+      next();
+    });
+  }
+
+  function readAllWithProgress(files) {
+    if (!files.length) {
+      setLoadProgress(100);
+      return Promise.resolve();
+    }
+    var total = files.reduce(function (s, f) {
+      return s + f.size;
+    }, 0);
+    var base = 0;
+    return files.reduce(function (chain, file) {
+      return chain.then(function () {
+        var b = base;
+        base += file.size;
+        return readFileChunked(file, b, total, setLoadProgress);
+      });
+    }, Promise.resolve());
+  }
+
+  function postInquiry(formData) {
+    return new Promise(function (resolve, reject) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/api/project-inquiry");
+      xhr.upload.onprogress = function (e) {
+        if (e.lengthComputable) {
+          setUploadProgress(Math.round((e.loaded / e.total) * 100));
+        }
+      };
+      xhr.onload = function () {
+        var text = xhr.responseText || "";
+        var j = {};
+        try {
+          j = text ? JSON.parse(text) : {};
+        } catch (e1) {
+          j = { error: text || "Invalid response" };
+        }
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve(j);
+        } else {
+          reject(new Error(j.error || "Request failed"));
+        }
+      };
+      xhr.onerror = function () {
+        reject(new Error("Network error"));
+      };
+      xhr.send(formData);
+    });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    hideMessages();
+
+    var fullName = document.getElementById("inquiry-fullName").value.trim();
+    var email = document.getElementById("inquiry-email").value.trim();
+    var projectType = document.getElementById("inquiry-projectType").value;
+    var budget = document.getElementById("inquiry-budget").value;
+    var brief = document.getElementById("inquiry-brief").value.trim();
+    var files = getSelectedFiles();
+
+    if (!fullName) {
+      errEl.textContent = "Please enter your full name.";
+      errEl.classList.remove("hidden");
+      return;
+    }
+    if (!email || email.indexOf("@") < 0) {
+      errEl.textContent = "Please enter a valid email.";
+      errEl.classList.remove("hidden");
+      return;
+    }
+    if (!brief) {
+      errEl.textContent = "Please enter a project brief.";
+      errEl.classList.remove("hidden");
+      return;
+    }
+
+    var ferr = validateFileSelection(files);
+    if (ferr) {
+      errEl.textContent = ferr;
+      errEl.classList.remove("hidden");
+      return;
+    }
+
+    progressWrap.classList.remove("hidden");
+    setLoadProgress(0);
+    setUploadProgress(0);
+    scanNote.classList.toggle("hidden", files.length === 0);
+    submitBtn.disabled = true;
+
+    readAllWithProgress(files)
+      .then(function () {
+        setUploadProgress(0);
+        var fd = new FormData();
+        fd.append("fullName", fullName);
+        fd.append("email", email);
+        fd.append("projectType", projectType);
+        fd.append("budget", budget);
+        fd.append("brief", brief);
+        for (var i = 0; i < files.length; i++) {
+          fd.append("attachment", files[i], files[i].name);
+        }
+        return postInquiry(fd);
+      })
+      .then(function () {
+        okEl.textContent =
+          "Inquiry received. Our engineering leads will respond within 24 business hours.";
+        okEl.classList.remove("hidden");
+        form.reset();
+        syncFromInput();
+        progressWrap.classList.add("hidden");
+        scanNote.classList.add("hidden");
+      })
+      .catch(function (err) {
+        errEl.textContent = err.message || "Something went wrong.";
+        errEl.classList.remove("hidden");
+        progressWrap.classList.add("hidden");
+        scanNote.classList.add("hidden");
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+      });
+  });
+})();
+</script>
+<script defer src="/stitch/viewport-engineering/shared/viewport-scroll.js"></script>
+</body></html>

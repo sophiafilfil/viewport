@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Careers | VIEWPORT Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#44474a",
+                        "surface-container-low": "#f7f9fa",
+                        "on-surface-variant": "#44474e",
+                        "secondary-fixed": "#e1e2e6",
+                        "on-primary-container": "#001e2d",
+                        "surface-variant": "#dee3e5",
+                        "outline-variant": "#c2c7cf",
+                        "inverse-surface": "#2e3133",
+                        "inverse-primary": "#82cfff",
+                        "tertiary-container": "#9ef1eb",
+                        "primary-fixed-dim": "#82cfff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#9ef1eb",
+                        "outline": "#72777f",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#003735",
+                        "secondary-container": "#dee3e5",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "surface-container-highest": "#e1e2e4",
+                        "surface": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#191c1e",
+                        "background": "#ffffff",
+                        "tertiary-fixed-dim": "#82d5cf",
+                        "surface-container-high": "#e7e8ea",
+                        "on-background": "#191c1e",
+                        "surface-container": "#f0f0f2",
+                        "primary-container": "#c6e7ff",
+                        "on-error-container": "#410002",
+                        "on-tertiary-fixed": "#00201e",
+                        "on-secondary-container": "#191c1e",
+                        "tertiary": "#006a66",
+                        "surface-dim": "#dadada",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#00504d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#565f71",
+                        "primary-fixed": "#c6e7ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#004c6b",
+                        "on-surface": "#191c1e",
+                        "inverse-on-surface": "#f0f0f2",
+                        "primary": "#00658d",
+                        "surface-tint": "#00658d",
+                        "on-tertiary-container": "#00201e",
+                        "on-primary-fixed": "#001e2d"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Work Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-gradient {
+            background: linear-gradient(135deg, #00AEEF 0%, #00658d 100%);
+        }
+        .corner-accent {
+            position: relative;
+        }
+        .corner-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid #00AEEF;
+            border-left: 2px solid #00AEEF;
+        }
+    </style>
+<link rel="stylesheet" href="/stitch/viewport-engineering/shared/viewport-scroll.css"/>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md rounded-none border-b border-[#c0c7cd]/30">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#191c1e] uppercase font-headline">
+            VIEWPORT <span class="text-[#00aeef]">Engineering</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/" target="_top">Home</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-services" target="_top">Services</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-projects" target="_top">Projects</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/about-us" target="_top">About</a>
+<a class="text-[#00658d] border-b-2 border-[#00658d] pb-1 font-headline font-bold tracking-tight uppercase" href="/careers" target="_top">Careers</a>
+</div>
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-[#00658d] text-[#00658d] bg-transparent font-headline font-bold uppercase text-sm transition-transform hover:bg-[#00658d]/5 active:scale-95" href="/our-services?schedule=1" target="_top">Schedule Session</a>
+<a class="inline-flex items-center justify-center px-6 py-2 bg-[#00aeef] text-white font-headline font-bold uppercase text-sm transition-transform scale-95 active:scale-90" href="/contact-us" target="_top">Get a Quote</a>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex items-center px-8 md:px-12 py-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-20" data-alt="High-tech engineering lab with blueprint overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWM4AiIbNxyGi8UiKW5RL-3SyyoPEMlEMIH7DjoEwkH88BecjnDy_buY9LedIdsh9gbKhNqjdAqsVopIqajpogR1qExOqD9AOuvVcs47EeyIaZtWAkHffIKWNhYYAxtSZd4h0UHHsrGlz04EPTAL3zrJ83mhSpnlWwaa28h58GKPzElVEPEeRengv5b5iFDfEYBFP0_ApBO6HLFyu-cBK2l0q1cePfQ1oHXZP6HFniGcnLX1rT7PgXAyicIcWUbPe1UYGjTfUvTMH0"/>
+</div>
+<div class="relative z-20 max-w-4xl">
+<div class="mb-6 flex items-center space-x-3">
+<span class="w-12 h-[2px] bg-primary"></span>
+<span class="font-label text-primary tracking-[0.2em] text-xs font-bold uppercase">Join the Elite</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface mb-8 leading-tight">
+                Build the Future of <span class="text-primary">Infrastructure.</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mb-12 leading-relaxed font-light">
+                Where mathematical precision meets architectural vision. We are looking for structural, civil, and industrial specialists to engineer the world's most complex monolithic structures.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="technical-gradient text-white px-8 py-4 font-headline font-bold tracking-tight text-center" href="#positions">View Open Positions</a>
+<button class="border-2 border-outline hover:bg-surface-container-low transition-colors px-8 py-4 font-headline font-bold tracking-tight text-on-surface">Our Engineering Process</button>
+</div>
+</div>
+</section>
+<!-- Why Work With Us (Bento Grid) -->
+<section class="px-8 md:px-12 py-24 bg-surface-container-lowest">
+<div class="mb-16">
+<h2 class="font-label text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4">The Viewport Standard</h2>
+<h3 class="font-headline text-3xl md:text-4xl text-on-surface font-bold">Why Work With Us</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Culture of Innovation -->
+<div class="md:col-span-8 bg-surface-container-low p-10 corner-accent border border-outline-variant flex flex-col justify-between min-h-[320px]">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">biotech</span>
+<h4 class="font-headline text-2xl text-on-surface font-bold mb-4">Culture of Innovation</h4>
+<p class="text-on-surface-variant max-w-md leading-relaxed">
+                        We deploy proprietary AI-driven modeling and sustainable material sciences that redefine what’s possible in structural integrity. You won't just build; you'll invent.
+                    </p>
+</div>
+</div>
+<!-- Technical Challenges -->
+<div class="md:col-span-4 bg-surface-container p-10 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">architecture</span>
+<h4 class="font-headline text-2xl text-on-surface font-bold mb-4">Technical Challenges</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                        From subterranean transit hubs to high-altitude seismic-resistant towers.
+                    </p>
+</div>
+</div>
+<!-- Career Growth -->
+<div class="md:col-span-4 bg-surface-container p-10 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">trending_up</span>
+<h4 class="font-headline text-2xl text-on-surface font-bold mb-4">Career Growth</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                        Structured mentorship with industry fellows and continuous certification funding.
+                    </p>
+</div>
+</div>
+<!-- Global Impact -->
+<div class="md:col-span-8 bg-surface-container-low border border-outline-variant p-10 flex items-center relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-105 transition-transform duration-700" data-alt="Glass skyscraper reflecting the city skyline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZFYL7v1YhzNoQMmTqkcS6JggjdKSDAs93U7AD0BV7hKEPf1k3xYmc5yOpYyfBNrT1tiQCEs9L_lRzNC0Hr1VtmSwdXCbfOm5ncDvJWPgRwtrWuNq-7qRjhJrGuo-H0E3HaWQYcC5ufD6tImFGusCEu6uJleNVOYJgN5V5ep6su8PW4yE7UK_1-Ht8e_Mp0TEniXc7NgyVaaCf3pDzgo48f_c5k9F9LGTdScKpPilZmkWO2651m-eTxU2VCYtgpz49BGgIk4vcqINW"/>
+<div class="relative z-10">
+<h4 class="font-headline text-2xl text-on-surface font-bold mb-4">Precision in Every Dimension</h4>
+<p class="text-on-surface-variant max-w-sm">
+                        Join a firm that holds a 99.9% structural reliability rating over two decades of global operations.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Open Positions -->
+<section class="px-8 md:px-12 py-24 bg-background" id="positions">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div>
+<h2 class="font-label text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4">Career Opportunities</h2>
+<h3 class="font-headline text-3xl md:text-4xl text-on-surface font-bold">Open Positions</h3>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-2">
+<button class="bg-primary text-white px-4 py-2 font-label text-xs font-bold tracking-widest uppercase">All Departments</button>
+<button class="bg-surface-container text-on-surface hover:bg-surface-container-high px-4 py-2 font-label text-xs font-bold tracking-widest uppercase transition-colors">Structural</button>
+<button class="bg-surface-container text-on-surface hover:bg-surface-container-high px-4 py-2 font-label text-xs font-bold tracking-widest uppercase transition-colors">Civil</button>
+<button class="bg-surface-container text-on-surface hover:bg-surface-container-high px-4 py-2 font-label text-xs font-bold tracking-widest uppercase transition-colors">Industrial</button>
+</div>
+</div>
+<!-- Job List -->
+<div class="space-y-4">
+<!-- Job Item 1 -->
+<div class="bg-surface-container-low border border-outline-variant group hover:border-primary transition-colors p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-2">
+<span class="font-label text-primary text-[10px] font-bold border border-primary px-2 py-0.5 uppercase tracking-tighter">Structural</span>
+<span class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Houston, Texas
+                        </span>
+</div>
+<h4 class="font-headline text-xl text-on-surface font-bold group-hover:text-primary transition-colors">Senior Computational Engineer</h4>
+</div>
+<div class="flex items-center gap-8">
+<span class="hidden lg:block text-on-surface-variant font-label text-xs uppercase tracking-widest">Post date: Oct 12</span>
+<a class="border-2 border-outline px-6 py-3 font-headline font-bold text-sm tracking-tight text-on-surface hover:border-primary transition-colors flex items-center gap-2" href="#">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Job Item 2 -->
+<div class="bg-surface-container-low border border-outline-variant group hover:border-primary transition-colors p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-2">
+<span class="font-label text-primary text-[10px] font-bold border border-primary px-2 py-0.5 uppercase tracking-tighter">Civil</span>
+<span class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Houston, Texas
+                        </span>
+</div>
+<h4 class="font-headline text-xl text-on-surface font-bold group-hover:text-primary transition-colors">Infrastructure Systems Lead</h4>
+</div>
+<div class="flex items-center gap-8">
+<span class="hidden lg:block text-on-surface-variant font-label text-xs uppercase tracking-widest">Post date: Oct 08</span>
+<a class="border-2 border-outline px-6 py-3 font-headline font-bold text-sm tracking-tight text-on-surface hover:border-primary transition-colors flex items-center gap-2" href="#">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Job Item 3 -->
+<div class="bg-surface-container-low border border-outline-variant group hover:border-primary transition-colors p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-2">
+<span class="font-label text-primary text-[10px] font-bold border border-primary px-2 py-0.5 uppercase tracking-tighter">Industrial</span>
+<span class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Houston, Texas
+                        </span>
+</div>
+<h4 class="font-headline text-xl text-on-surface font-bold group-hover:text-primary transition-colors">Project Principal - Clean Tech</h4>
+</div>
+<div class="flex items-center gap-8">
+<span class="hidden lg:block text-on-surface-variant font-label text-xs uppercase tracking-widest">Post date: Sep 29</span>
+<a class="border-2 border-outline px-6 py-3 font-headline font-bold text-sm tracking-tight text-on-surface hover:border-primary transition-colors flex items-center gap-2" href="#">
+                        View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Submit Resume CTA -->
+<section class="px-8 md:px-12 py-24 mb-24">
+<div class="bg-surface-container-high p-12 md:p-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-5">
+<svg class="w-full h-full fill-primary" viewbox="0 0 100 100">
+<path d="M0,0 L100,0 L100,100 Z"></path>
+</svg>
+</div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-6">Don't see a fit?</h2>
+<p class="text-on-surface-variant text-lg mb-8 max-w-md">
+                        We are always looking for exceptional talent in the engineering sector. Submit your resume to our general talent pool for future consideration.
+                    </p>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-label text-xs text-on-surface font-bold uppercase tracking-widest">Strict Confidentiality Maintained</span>
+</div>
+</div>
+<div class="bg-background p-8 corner-accent border border-outline-variant shadow-lg">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] font-bold text-primary uppercase tracking-[0.2em]">Full Name</label>
+<input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-primary focus:ring-0 text-on-surface p-3 font-body" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] font-bold text-primary uppercase tracking-[0.2em]">Email Address</label>
+<input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-primary focus:ring-0 text-on-surface p-3 font-body" placeholder="j.doe@engineer.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] font-bold text-primary uppercase tracking-[0.2em]">LinkedIn URL (Optional)</label>
+<input class="w-full bg-surface-container border-0 border-b-2 border-outline focus:border-primary focus:ring-0 text-on-surface p-3 font-body" placeholder="linkedin.com/in/johndoe" type="url"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] font-bold text-primary uppercase tracking-[0.2em]">Resume/Portfolio (PDF)</label>
+<div class="border-2 border-dashed border-outline p-8 text-center hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-3xl text-outline mb-2 group-hover:text-primary">upload_file</span>
+<p class="text-sm text-on-surface-variant">Drop files here or <span class="text-primary font-bold underline">browse</span></p>
+</div>
+</div>
+<button class="w-full technical-gradient text-white py-4 font-headline font-bold tracking-tight uppercase" type="submit">Submit Resume</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 w-full">
+<div class="space-y-6">
+<div class="text-lg font-bold text-on-background tracking-widest uppercase font-headline">VIEWPORT</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-xs">
+                Engineering precision for the modern era. We build the infrastructure that defines civilizations.
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h5 class="text-on-surface font-bold font-headline text-sm uppercase tracking-widest">Navigation</h5>
+<ul class="space-y-2">
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/" target="_top">Home</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/our-services" target="_top">Services</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/our-projects" target="_top">Projects</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/about-us" target="_top">About</a></li>
+<li><a class="font-body text-sm text-primary font-medium" href="/careers" target="_top">Careers</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/contact-us" target="_top">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-on-surface font-bold font-headline text-sm uppercase tracking-widest">Legal</h5>
+<ul class="space-y-2">
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Legal</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-4">
+<h5 class="text-on-surface font-bold font-headline text-sm uppercase tracking-widest">Global Offices</h5>
+<ul class="space-y-2">
+<li class="font-body text-sm text-on-surface-variant font-medium">Zurich | Singapore | New York</li>
+<li class="font-body text-sm text-on-surface-variant">contact@viewport.eng</li>
+<li class="font-body text-sm text-on-surface-variant">+41 44 213 4500</li>
+</ul>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-body text-sm text-on-surface-variant">© 2024 VIEWPORT Engineering. Precision in Every Dimension.</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">language</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">share</span></a>
+</div>
+</div>
+</footer>
+<script defer src="/stitch/viewport-engineering/shared/viewport-scroll.js"></script>
+</body></html>

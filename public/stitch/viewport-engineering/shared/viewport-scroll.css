@@ -1,0 +1,34 @@
+/* Hero blueprint: one-time rise into place when first scrolled into view (see viewport-scroll.js). */
+
+@keyframes vp-blueprint-grid-rise {
+  from {
+    background-position: 12px 88px;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+main > section:first-of-type .blueprint-grid.vp-blueprint-grid--pending:not(.vp-blueprint-grid--revealed),
+main > section:first-of-type.blueprint-grid.vp-blueprint-grid--pending:not(.vp-blueprint-grid--revealed) {
+  background-position: 12px 88px;
+}
+
+main > section:first-of-type .blueprint-grid.vp-blueprint-grid--pending.vp-blueprint-grid--revealed,
+main > section:first-of-type.blueprint-grid.vp-blueprint-grid--pending.vp-blueprint-grid--revealed {
+  animation: vp-blueprint-grid-rise 1.1s cubic-bezier(0.16, 1, 0.32, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > section:first-of-type .blueprint-grid.vp-blueprint-grid--pending,
+  main > section:first-of-type.blueprint-grid.vp-blueprint-grid--pending {
+    background-position: 0 0 !important;
+    animation: none !important;
+  }
+}
+
+/* Nav elevation when scrolled (class toggled by viewport-scroll.js) */
+nav.vp-nav--elevated {
+  box-shadow: 0 10px 30px -12px rgba(25, 28, 30, 0.18);
+  border-bottom-color: rgba(192, 199, 205, 0.45);
+}

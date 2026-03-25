@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | VIEWPORT Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00AEEF",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#C6E7FF",
+                        "on-primary-container": "#001E2D",
+                        "secondary": "#52606B",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#D6E4F0",
+                        "on-secondary-container": "#0F1D26",
+                        "surface": "#FCFDFF",
+                        "on-surface": "#191C1E",
+                        "surface-variant": "#DEE3E9",
+                        "on-surface-variant": "#42474E",
+                        "background": "#FCFDFF",
+                        "on-background": "#191C1E",
+                        "outline": "#72777E",
+                        "outline-variant": "#C2C7CE",
+                        "surface-container-lowest": "#FFFFFF",
+                        "surface-container-low": "#F1F4F9",
+                        "surface-container": "#EBEEF3",
+                        "surface-container-high": "#E5E8ED",
+                        "surface-container-highest": "#DFE2E8",
+                        "error": "#BA1A1A"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Work Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-gradient {
+            background: linear-gradient(135deg, #00AEEF 0%, #0077A3 100%);
+        }
+        .corner-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            border-top: 2px solid #00AEEF;
+            border-left: 2px solid #00AEEF;
+        }
+        .corner-accent::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            border-bottom: 2px solid #00AEEF;
+            border-right: 2px solid #00AEEF;
+        }
+    </style>
+<link rel="stylesheet" href="/stitch/viewport-engineering/shared/viewport-scroll.css"/>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md rounded-none border-b border-[#c0c7cd]/30">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#191c1e] uppercase font-headline">
+            VIEWPORT <span class="text-[#00aeef]">Engineering</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/" target="_top">Home</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-services" target="_top">Services</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/our-projects" target="_top">Projects</a>
+<a class="text-[#00658d] border-b-2 border-[#00658d] pb-1 font-headline font-bold tracking-tight uppercase" href="/about-us" target="_top">About</a>
+<a class="text-[#40484c] hover:text-[#00658d] transition-colors font-headline font-bold tracking-tight uppercase" href="/careers" target="_top">Careers</a>
+</div>
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-[#00658d] text-[#00658d] bg-transparent font-headline font-bold uppercase text-sm transition-transform hover:bg-[#00658d]/5 active:scale-95" href="/our-services?schedule=1" target="_top">Schedule Session</a>
+<a class="inline-flex items-center justify-center px-6 py-2 bg-[#00aeef] text-white font-headline font-bold uppercase text-sm transition-transform scale-95 active:scale-90" href="/contact-us" target="_top">Get a Quote</a>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative h-[819px] flex items-center bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute inset-0" data-alt="Abstract architectural blueprint background showing complex lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYhHoVcjcAFbMhqHPKjuz5uNSJ9PhOyC4awHTyUe-YngLvy3pBUv8oiuW357GdhATqYtdsn7smbQbbhXcVEyL1JWoRu7vuGHuK4_YJtYdablela27TbiCcg43rsZ0gPLR9XgU-CygB_nTaeiRWWYhX8rPxbzpZLqYJxPU2V34dCFQUVb4TSIbTIs7XIWAPVOdKss8ubtMAAuYxBtkEcIkWn0-nWbmoD1IUPLqdO-pgkH762oXemWqU6y5vw1fdlVUNaidg6DFzs2VQ'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-4xl">
+<span class="font-label text-primary tracking-[0.2em] text-xs font-bold mb-4 block">ESTABLISHED 1994</span>
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-8 text-on-surface">
+                    THE <span class="text-primary">ARCHITECTURAL</span><br/>MONOLITH.
+                </h1>
+<p class="text-on-surface-variant text-xl max-w-2xl font-light leading-relaxed border-l-2 border-primary pl-8">
+                    Precision isn't just a metric at VIEWPORT Engineering; it is our fundamental DNA. We design infrastructure that defines the skyline and systems that sustain modern civilization.
+                </p>
+</div>
+</div>
+</section>
+<!-- Our Story / Mission Grid -->
+<section class="bg-surface py-32 px-8">
+<div class="container mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-outline-variant">
+<!-- Text Block -->
+<div class="lg:col-span-7 bg-white p-12 md:p-20 relative">
+<div class="corner-accent p-2 absolute top-0 left-0 w-full h-full pointer-events-none"></div>
+<h2 class="font-headline text-4xl font-bold mb-12 tracking-tight text-on-surface">OUR STORY</h2>
+<div class="space-y-6 text-on-surface-variant font-body leading-loose">
+<p>Founded on the principle of mathematical certainty, VIEWPORT began as a specialized structural consultancy. Over three decades, we have evolved into a global powerhouse of multidisciplinary engineering.</p>
+<p>We don't just solve problems; we optimize existence. Every bridge, facility, and energy grid bearing the VIEWPORT stamp represents a triumph of technical superiority over environmental complexity.</p>
+</div>
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<div class="text-3xl font-headline font-bold text-primary mb-2">300+</div>
+<div class="font-label text-[0.6875rem] text-outline tracking-widest uppercase">Global Projects</div>
+</div>
+<div>
+<div class="text-3xl font-headline font-bold text-primary mb-2">12</div>
+<div class="font-label text-[0.6875rem] text-outline tracking-widest uppercase">Regional Offices</div>
+</div>
+<div>
+<div class="text-3xl font-headline font-bold text-primary mb-2">85k</div>
+<div class="font-label text-[0.6875rem] text-outline tracking-widest uppercase">Safe Hours</div>
+</div>
+</div>
+</div>
+<!-- Visual Block -->
+<div class="lg:col-span-5 bg-surface-container-high h-[400px] lg:h-auto relative overflow-hidden">
+<img alt="Modernist glass building reflection" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="Extreme close up of structural steel joints" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC51wmYy_oH2iTbOSqOQ93YorZo-YLt1hdDT9X1O4TBcVlx3-HS3v0bLAVmflcrdSBYG7JdCOficfjCosNvrpRiWVVtClFFpgyeXUvTIpdIJwKiJg1_7fnpoCyYjlTUrsOJtgsXth-x-RdtzWHlUdBfDReyjSnWbA-D65UqxMS5O3UYu-tCqZIuBNt_DNkmw4jK2e_ozTA2KeCHPaYpEztXUQ3TStG5_RnEfC46urPIc6pE4eloWV_XM09CWtjVV88BxQN9BdbvXQeq"/>
+<div class="absolute inset-0 technical-gradient opacity-10"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pillars of Excellence -->
+<section class="bg-surface-container-lowest py-32 px-8">
+<div class="container mx-auto">
+<div class="mb-20">
+<h3 class="font-label text-sm text-primary tracking-[0.3em] font-bold mb-4 uppercase">Core Philosophy</h3>
+<h2 class="font-headline text-4xl font-bold tracking-tight text-on-surface">PILLARS OF EXCELLENCE</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1 bg-outline-variant">
+<!-- Pillar 1 -->
+<div class="bg-white p-12 group hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<h4 class="font-headline text-2xl font-bold mb-4 text-on-surface">Engineering Precision</h4>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Our tolerances are measured in microns. We leverage advanced computational fluid dynamics and structural modeling to ensure zero-fail outcomes.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-white p-12 group hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" style="font-variation-settings: 'FILL' 1;">biotech</span>
+<h4 class="font-headline text-2xl font-bold mb-4 text-on-surface">Innovation Ecosystem</h4>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Through our in-house R&amp;D labs, we pioneer new composite materials and carbon-negative concrete formulations for the next century of building.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-white p-12 group hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" style="font-variation-settings: 'FILL' 1;">eco</span>
+<h4 class="font-headline text-2xl font-bold mb-4 text-on-surface">Sustainability Matrix</h4>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Regenerative design is our standard. We engineer systems that return more energy to the grid than they consume, minimizing ecological footprints.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="bg-surface py-32 px-8">
+<div class="container mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+<div>
+<h3 class="font-label text-sm text-primary tracking-[0.3em] font-bold mb-4 uppercase">Senior Council</h3>
+<h2 class="font-headline text-5xl font-bold tracking-tight text-on-surface">THE MINDS BEHIND<br/>THE MONOLITH</h2>
+</div>
+<div class="max-w-md">
+<p class="text-on-surface-variant text-sm border-l border-outline-variant pl-6">Led by industry veterans, our leadership team integrates three decades of on-site experience with cutting-edge theoretical research.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Leader 1 -->
+<div class="bg-white border border-outline-variant group overflow-hidden">
+<div class="aspect-[4/5] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+<img alt="Elias Thorne Profile" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700" data-alt="Professional portrait of a male engineer in a dark suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj3lBFy17YjZDCq8KhVkZQ6cR5L6N0SH318mmUftVq_4lhxLP_96EW0q8AmGFj4ucZADbKSuI_4vCEsyfRJERsIoc3uX63eYq9ytDxwkC1O1NnQCVFzy5fT5uZ9L2Rg78U5DFlIl-VMHGY12pvqb9xyT1gGKli42iVoL2LDl4Xzx4_7cSO8ji7rBU14Bo3wRC8Eg1XJOJoxjFY6Az9OY1PtV5eOlHY0VsXOdjtnkhzKF_lDQOclLTMyhm5o_lMWWIkJimHihR9qvul"/>
+</div>
+<div class="p-8">
+<h5 class="font-headline text-xl font-bold text-on-surface mb-1">Elias Thorne, P.E.</h5>
+<p class="font-label text-[10px] text-primary tracking-widest uppercase mb-4">Chief Technical Officer</p>
+<p class="text-on-surface-variant text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">A visionary in bridge design with 25 years of experience in seismically active zones.</p>
+</div>
+</div>
+<!-- Leader 2 -->
+<div class="bg-white border border-outline-variant group overflow-hidden">
+<div class="aspect-[4/5] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+<img alt="Sarah Chen Profile" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700" data-alt="Professional portrait of a female lead engineer in a modern office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6gYUsr9a51xWBBhV_z1tiZ2-Aw9TCoAUNBOmb7Zdlh4QrII7FB1muxk8jWiWe91QQWaPDxnIZ3HL8aYeXPRS-aAB3R87dWACUrOH7N-m62E7HJn4xiPO79b1pOOEbgP8hIR6m0sqNPxS1d7wHdE6He1IAKyAuGKbPhYdEC8DvvtL-gGZezxCxIPfkr6PvEwM74bzx-faXnZ3iJ5f600d1N7uZWT1iaMUPHyXRzN1Z7h8mCWCJdVnrUNyQN6Lls7vGr6OjF0O6jJJY"/>
+</div>
+<div class="p-8">
+<h5 class="font-headline text-xl font-bold text-on-surface mb-1">Dr. Sarah Chen</h5>
+<p class="font-label text-[10px] text-primary tracking-widest uppercase mb-4">VP of Infrastructure</p>
+<p class="text-on-surface-variant text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">Expert in smart-city thermodynamics and integrated transit systems.</p>
+</div>
+</div>
+<!-- Leader 3 -->
+<div class="bg-white border border-outline-variant group overflow-hidden">
+<div class="aspect-[4/5] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+<img alt="Marcus Vane Profile" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700" data-alt="Portrait of a senior male engineer at a construction site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbQC1I20ieA_jGE0ZsDAyrPU56aw_WeY9mNsjB2v8aFwlyoBabfp5Hv12TpxKyAqj_sd8BJVMNjGN87B9LgmTII_yJ-QTeNRdSiBQ_x9rKCOTTXFHvvzzDDMcXN4B-Esi0vzxGnGP62vn2nEeMsK7haUugh3Bg5SjSDwkngHoIOKv_2T8y8zJQJK_ZeMNihN-gjVRi2ttPX45xaNmYFVHGLypzgdy2NM1SUIRGmSSe7fDxZZUhyFrZOx97bHxgjEhWqIYoPnmmoQoe"/>
+</div>
+<div class="p-8">
+<h5 class="font-headline text-xl font-bold text-on-surface mb-1">Marcus Vane</h5>
+<p class="font-label text-[10px] text-primary tracking-widest uppercase mb-4">Director of Safety</p>
+<p class="text-on-surface-variant text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">Architect of VIEWPORT's legendary Zero-Incident protocols.</p>
+</div>
+</div>
+<!-- Leader 4 -->
+<div class="bg-white border border-outline-variant group overflow-hidden">
+<div class="aspect-[4/5] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+<img alt="Elena Rodriguez Profile" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700" data-alt="Portrait of a female engineer with a professional look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6_K1IBf_NUqAklk2xm4WFjh1JzpFKTqOj_kHuFO8KrqGPZvQuydmxwFrJkRnGaUJCMAsQ2q45stnF0aTbiLaSEheWIITztpp5_RdLzVLdF3yEExDeUMzYBcqMqMfo2zX_4Yb6Y8lE9IkLira1i9Q1kikz4Cxcp0-OxvORZIOmVEsnVUKDA_EuebdMNF9aVRhhKEFjYElb7zfHGvgQJplJD3uFC1VknXlC60PlQXEUH5aBVGTms9RtJrwiJURWfLtV0wt_bro9d9hn"/>
+</div>
+<div class="p-8">
+<h5 class="font-headline text-xl font-bold text-on-surface mb-1">Elena Rodriguez</h5>
+<p class="font-label text-[10px] text-primary tracking-widest uppercase mb-4">Chief Sustainability Officer</p>
+<p class="text-on-surface-variant text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">Leading the transition to carbon-neutral material sourcing worldwide.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Safety & Quality Standards -->
+<section class="bg-surface-container py-32 px-8 overflow-hidden relative">
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[30rem] text-primary">verified_user</span>
+</div>
+<div class="container mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h3 class="font-label text-sm text-primary tracking-[0.3em] font-bold mb-4 uppercase">Risk Mitigation</h3>
+<h2 class="font-headline text-4xl font-bold mb-8 text-on-surface">ABSOLUTE SAFETY.<br/>ZERO COMPROMISE.</h2>
+<p class="text-on-surface-variant mb-12 max-w-lg">Our Quality Assurance (QA) protocols exceed international ISO standards by 15%. We operate on a logic of preventive engineering—identifying failure points decades before they manifest.</p>
+<div class="space-y-4">
+<div class="flex items-center space-x-4 p-4 bg-white border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-headline font-bold text-sm text-on-surface">ISO 9001:2015 CERTIFIED</span>
+</div>
+<div class="flex items-center space-x-4 p-4 bg-white border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-headline font-bold text-sm text-on-surface">OSHA VPP STAR STATUS</span>
+</div>
+<div class="flex items-center space-x-4 p-4 bg-white border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-headline font-bold text-sm text-on-surface">LEED PLATINUM STANDARD</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-8 aspect-square flex flex-col justify-end corner-accent border border-outline-variant/30">
+<h6 class="font-headline text-4xl font-bold text-primary mb-2">0.02</h6>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Lost Time Incident Rate</p>
+</div>
+<div class="bg-white p-8 aspect-square flex flex-col justify-end border border-outline-variant/30">
+<h6 class="font-headline text-4xl font-bold text-primary mb-2">100%</h6>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Material Traceability</p>
+</div>
+<div class="bg-white p-8 aspect-square flex flex-col justify-end border border-outline-variant/30">
+<h6 class="font-headline text-4xl font-bold text-primary mb-2">A+</h6>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Bonding Capacity</p>
+</div>
+<div class="bg-white p-8 aspect-square flex flex-col justify-end corner-accent rotate-180 border border-outline-variant/30">
+<div class="rotate-180 text-left">
+<h6 class="font-headline text-4xl font-bold text-primary mb-2">24/7</h6>
+<p class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Site Monitoring</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-white py-32 px-8">
+<div class="container mx-auto text-center">
+<h2 class="font-headline text-5xl font-bold mb-8 text-on-surface">READY TO BUILD THE FUTURE?</h2>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<a class="technical-gradient text-on-primary px-10 py-4 font-headline font-bold tracking-tight text-lg min-w-[240px] inline-flex items-center justify-center" href="/contact-us" target="_top">
+                    START A PROJECT
+                </a>
+<a class="border-2 border-primary text-primary px-10 py-4 font-headline font-bold tracking-tight text-lg min-w-[240px] hover:bg-primary/5 transition-colors inline-flex items-center justify-center" href="/careers" target="_top">
+                    VIEW CAREERS
+                </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest w-full border-t border-outline-variant rounded-none">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 w-full">
+<div class="space-y-6">
+<div class="text-lg font-bold text-on-surface tracking-widest uppercase font-headline">VIEWPORT</div>
+<p class="font-body text-sm text-on-surface-variant max-w-xs leading-relaxed">Defining the next era of industrial civilization through mathematical precision and architectural excellence.</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h6 class="font-label text-[10px] text-primary tracking-[0.2em] font-bold uppercase">Navigation</h6>
+<ul class="space-y-2">
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/" target="_top">Home</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/our-services" target="_top">Services</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/our-projects" target="_top">Projects</a></li>
+<li><a class="font-body text-sm text-on-surface font-bold" href="/about-us" target="_top">About</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/careers" target="_top">Careers</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/contact-us" target="_top">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h6 class="font-label text-[10px] text-primary tracking-[0.2em] font-bold uppercase">Compliance</h6>
+<ul class="space-y-2">
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Legal</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-4">
+<h6 class="font-label text-[10px] text-primary tracking-[0.2em] font-bold uppercase">Global Headquarters</h6>
+<p class="font-body text-sm text-on-surface-variant">1200 Technical Plaza, Suite 400<br/>Houston, TX 77002</p>
+<div class="flex space-x-4 pt-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">language</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">share</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">mail</span>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-container-high">
+<span class="font-body text-sm text-on-surface-variant">© 2024 VIEWPORT Engineering. Precision in Every Dimension.</span>
+<div class="flex space-x-6">
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/contact-us" target="_top">Office Locations</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors" href="/contact-us" target="_top">Contact</a>
+</div>
+</div>
+</footer>
+<script defer src="/stitch/viewport-engineering/shared/viewport-scroll.js"></script>
+</body></html>
